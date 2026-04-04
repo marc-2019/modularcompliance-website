@@ -1,0 +1,36 @@
+# Modular Compliance
+
+> Cloud-based compliance management platform for NZ and AU SMEs. Manage ISO 27001, SOC 2, NZ Privacy Act, AML/CFT, Health and Safety, Food Safety, and more from a single dashboard.
+
+## About
+
+Modular Compliance is a SaaS platform built by Instilligent Limited that automates regulatory compliance for small and medium enterprises across New Zealand and Australia. Built with AI at its core, it reduces reliance on consultants, spreadsheets, and guesswork.
+
+## Key Features
+
+- Multi-framework compliance management (ISO 27001, SOC 2, NZ Privacy Act, AML/CFT, Health and Safety, Food Safety, Environmental, Maritime, Body Corporate, Quality ISO)
+- Automated gap detection and compliance alerts
+- Real-time control monitoring and evidence collection
+- On-demand audit reports and evidence packs
+- Role-based access control with multi-tenant architecture
+- White-label partner programme
+
+## Pricing
+
+- Starter: NZD 199/month (5 users, 2 frameworks)
+- Professional: NZD 499/month (25 users, 5 frameworks)
+- Enterprise: NZD 999/month (unlimited users and frameworks)
+
+## Tech Stack
+
+- Frontend: React 18 with Material UI
+- Backend: Node.js Express API
+- Database: PostgreSQL
+- Auth: JWT with RBAC
+- Payments: Stripe
+
+## Contact
+
+- Website: https://modularcompliance.com
+- Parent company: https://instilligent.com
+- Email: info@instilligent.com
