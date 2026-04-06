@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "product": "Modular Compliance",
+  "operator": "Instilligent Limited",
+  "operator_nzbn": "9429051796284",
+  "product_url": "https://modularcompliance.com",
+  "last_updated": "2026-04-06",
+  "total_active": 8,
+  "modules": [
+    {
+      "id": "health-safety",
+      "number": 1,
+      "name": "Health & Safety",
+      "legislation": [
+        "Health and Safety at Work Act 2015 (HSWA)"
+      ],
+      "legislation_tags": ["HSWA 2015"],
+      "regulators": ["WorkSafe New Zealand"],
+      "status": "active",
+      "added": "2026-03-31",
+      "updated": "2026-03-31",
+      "removed": null,
+      "features": [
+        "Hazard register & risk matrix",
+        "Incident & near-miss tracking",
+        "WorkSafe notification report generation",
+        "Worker engagement records",
+        "Training & induction tracking with expiry alerts"
+      ]
+    },
+    {
+      "id": "aml-cft",
+      "number": 2,
+      "name": "AML/CFT",
+      "legislation": [
+        "Anti-Money Laundering and Countering Financing of Terrorism Act 2009"
+      ],
+      "legislation_tags": ["AML/CFT Act 2009"],
+      "regulators": [
+        "Department of Internal Affairs (DIA)",
+        "Financial Markets Authority (FMA)",
+        "Reserve Bank of New Zealand (RBNZ)"
+      ],
+      "status": "active",
+      "added": "2026-03-31",
+      "updated": "2026-03-31",
+      "removed": null,
+      "features": [
+        "Customer due diligence (CDD) — standard & enhanced",
+        "Transaction monitoring with configurable thresholds",
+        "SAR & STR report generation (DIA/FMA/RBNZ format)",
+        "AML/CFT programme documentation",
+        "Annual risk assessment"
+      ]
+    },
+    {
+      "id": "privacy-act",
+      "number": 3,
+      "name": "Privacy Act 2020",
+      "legislation": [
+        "Privacy Act 2020 (NZ)"
+      ],
+      "legislation_tags": ["Privacy Act 2020"],
+      "regulators": ["Office of the Privacy Commissioner"],
+      "status": "active",
+      "added": "2026-03-31",
+      "updated": "2026-03-31",
+      "removed": null,
+      "features": [
+        "IPP compliance tracking — all 12 Information Privacy Principles",
+        "Privacy Impact Assessments",
+        "Privacy breach notification workflow (72-hour timer)",
+        "Privacy Commissioner notification generation",
+        "Data inventory & flow mapping"
+      ]
+    },
+    {
+      "id": "employment-relations",
+      "number": 4,
+      "name": "Employment Relations",
+      "legislation": [
+        "Employment Relations Act 2000",
+        "Holidays Act 2003"
+      ],
+      "legislation_tags": ["ERA 2000", "Holidays Act 2003"],
+      "regulators": [
+        "Employment Relations Authority",
+        "Labour Inspectorate"
+      ],
+      "status": "active",
+      "added": "2026-03-31",
+      "updated": "2026-03-31",
+      "removed": null,
+      "features": [
+        "Employment agreement management",
+        "Leave entitlement tracking",
+        "Personal grievance workflow",
+        "Minimum wage monitoring",
+        "Good faith obligation documentation"
+      ]
+    },
+    {
+      "id": "environmental",
+      "number": 5,
+      "name": "Environmental",
+      "legislation": [
+        "Resource Management Act 1991 (RMA)"
+      ],
+      "legislation_tags": ["RMA 1991"],
+      "regulators": [
+        "Regional councils",
+        "Ministry for the Environment"
+      ],
+      "status": "active",
+      "added": "2026-03-31",
+      "updated": "2026-03-31",
+      "removed": null,
+      "features": [
+        "Resource consent condition monitoring",
+        "Emissions limit tracking",
+        "Environmental incident reporting",
+        "Regional council notification workflows"
+      ]
+    },
+    {
+      "id": "building-construction",
+      "number": 6,
+      "name": "Building & Construction",
+      "legislation": [
+        "Building Act 2004"
+      ],
+      "legislation_tags": ["Building Act 2004"],
+      "regulators": [
+        "MBIE (Ministry of Business, Innovation and Employment)",
+        "Territorial authorities"
+      ],
+      "status": "active",
+      "added": "2026-03-31",
+      "updated": "2026-03-31",
+      "removed": null,
+      "features": [
+        "Building consent tracking",
+        "Code of compliance certificate tracking",
+        "Licensed Building Practitioner (LBP) requirements",
+        "IQP obligations",
+        "Building Warrant of Fitness (BWoF) tracking"
+      ]
+    },
+    {
+      "id": "consumer-protection",
+      "number": 7,
+      "name": "Consumer Protection",
+      "legislation": [
+        "Consumer Guarantees Act 1993 (CGA)",
+        "Fair Trading Act 1986 (FTA)"
+      ],
+      "legislation_tags": ["CGA 1993", "FTA 1986"],
+      "regulators": ["Commerce Commission"],
+      "status": "active",
+      "added": "2026-03-31",
+      "updated": "2026-03-31",
+      "removed": null,
+      "features": [
+        "Consumer guarantees compliance",
+        "Fair trading obligations",
+        "Product safety notifications",
+        "Returns & refund policy audit"
+      ]
+    },
+    {
+      "id": "body-corporate",
+      "number": 8,
+      "name": "Body Corporate",
+      "legislation": [
+        "Unit Titles Act 2010"
+      ],
+      "legislation_tags": ["Unit Titles Act 2010"],
+      "regulators": [
+        "Tenancy Tribunal",
+        "Territorial authorities"
+      ],
+      "status": "active",
+      "added": "2026-03-31",
+      "updated": "2026-03-31",
+      "removed": null,
+      "features": [
+        "Unit title governance",
+        "Body corporate rules management",
+        "AGM documentation",
+        "Long-term maintenance plan compliance",
+        "Building Warrant of Fitness (BWoF) tracking for shared building systems"
+      ]
+    }
+  ]
+}

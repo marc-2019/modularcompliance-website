@@ -1,36 +1,104 @@
 # Modular Compliance
 
-> Cloud-based compliance management platform for NZ and AU SMEs. Manage ISO 27001, SOC 2, NZ Privacy Act, AML/CFT, Health and Safety, Food Safety, and more from a single dashboard.
+> Compliance management platform purpose-built for New Zealand businesses. Manage obligations under 8 NZ legislation areas — Health & Safety, AML/CFT, Privacy Act 2020, Employment Relations, Environmental, Building & Construction, Consumer Protection, and Body Corporate — from a single automated dashboard.
 
 ## About
 
-Modular Compliance is a SaaS platform built by Instilligent Limited that automates regulatory compliance for small and medium enterprises across New Zealand and Australia. Built with AI at its core, it reduces reliance on consultants, spreadsheets, and guesswork.
+Modular Compliance is a SaaS platform built by Instilligent Limited (NZBN: 9429051796284) that automates regulatory compliance management for New Zealand SMEs and enterprises. It replaces compliance consultants, spreadsheets, and guesswork with continuous automated monitoring, AI-surfaced priority actions, and tamper-evident 7-year audit trails.
 
-## Key Features
+All 8 modules are built around actual New Zealand legislation — not generic international frameworks like ISO 27001 or SOC 2. Geographic focus: New Zealand only.
 
-- Multi-framework compliance management (ISO 27001, SOC 2, NZ Privacy Act, AML/CFT, Health and Safety, Food Safety, Environmental, Maritime, Body Corporate, Quality ISO)
-- Automated gap detection and compliance alerts
-- Real-time control monitoring and evidence collection
-- On-demand audit reports and evidence packs
-- Role-based access control with multi-tenant architecture
-- White-label partner programme
+## Compliance Modules
+
+For full machine-readable module data including status, dates, and features see: https://modularcompliance.com/modules.json
+
+### Module 1 — Health & Safety
+- Legislation: Health and Safety at Work Act 2015 (HSWA 2015)
+- Regulator: WorkSafe New Zealand
+- Features: Hazard register & risk matrix, incident & near-miss tracking, WorkSafe notification report generation, worker engagement records, training & induction tracking with automated expiry alerts
+- Status: Active
+
+### Module 2 — AML/CFT
+- Legislation: Anti-Money Laundering and Countering Financing of Terrorism Act 2009
+- Regulators: Department of Internal Affairs (DIA), Financial Markets Authority (FMA), Reserve Bank of New Zealand (RBNZ)
+- Features: Standard and enhanced customer due diligence (CDD), transaction monitoring with configurable thresholds, SAR & STR report generation, AML/CFT programme documentation, annual risk assessment
+- Status: Active
+
+### Module 3 — Privacy Act 2020
+- Legislation: Privacy Act 2020 (NZ)
+- Regulator: Office of the Privacy Commissioner
+- Features: IPP compliance tracking across all 12 Information Privacy Principles, Privacy Impact Assessments, privacy breach notification workflow (72-hour timer, Privacy Commissioner notification), data inventory & flow mapping
+- Status: Active
+
+### Module 4 — Employment Relations
+- Legislation: Employment Relations Act 2000, Holidays Act 2003
+- Regulators: Employment Relations Authority, Labour Inspectorate
+- Features: Employment agreement management, leave entitlement tracking, personal grievance workflow, minimum wage monitoring, good faith obligation documentation
+- Status: Active
+
+### Module 5 — Environmental
+- Legislation: Resource Management Act 1991 (RMA)
+- Regulators: Regional councils, Ministry for the Environment
+- Features: Resource consent condition monitoring, emissions limit tracking, environmental incident reporting, regional council notification workflows
+- Status: Active
+
+### Module 6 — Building & Construction
+- Legislation: Building Act 2004
+- Regulators: MBIE, territorial authorities
+- Features: Building consent tracking, code of compliance certificates, Licensed Building Practitioner (LBP) requirements, IQP obligations, Building Warrant of Fitness (BWoF) tracking
+- Status: Active
+
+### Module 7 — Consumer Protection
+- Legislation: Consumer Guarantees Act 1993 (CGA), Fair Trading Act 1986 (FTA)
+- Regulator: Commerce Commission
+- Features: Consumer guarantees compliance, fair trading obligations, product safety notifications, returns & refund policy audit
+- Status: Active
+
+### Module 8 — Body Corporate
+- Legislation: Unit Titles Act 2010
+- Regulators: Tenancy Tribunal, territorial authorities
+- Features: Unit title governance, body corporate rules management, AGM documentation, long-term maintenance plan compliance, BWoF tracking for shared building systems
+- Status: Active
+
+## Platform Features
+
+- **Live Compliance Score**: Real-time aggregate score across all active modules, updated instantly as actions are completed
+- **Priority Actions**: AI-surfaced compliance gaps in plain English — highest risk first
+- **Automated Monitoring**: Continuous 24/7 background checks across all active frameworks; alerts before breaches, not after regulator visits
+- **One-Click Audit Reports**: PDF and CSV export; regulator-ready for any date range, any module
+- **7-Year Audit Trail**: Tamper-evident record of every action, document, and decision — retained automatically to meet NZ legislative requirements
+- **Multi-User Teams**: Task assignment, completion tracking, compliance responsibilities across teams (5 to unlimited users)
+- **Cross-Framework Gap Mapping**: Identify where obligations overlap and where gaps exist; no double-handling of shared requirements
+- **Role-Based Access Control**: Available on Professional and Enterprise plans
 
 ## Pricing
 
-- Starter: NZD 199/month (5 users, 2 frameworks)
-- Professional: NZD 499/month (25 users, 5 frameworks)
-- Enterprise: NZD 999/month (unlimited users and frameworks)
+All prices in NZD + GST. 14-day free trial, no credit card required.
 
-## Tech Stack
+- **Starter**: NZD 199/month — up to 5 users, 2 compliance modules of choice
+- **Professional**: NZD 499/month — up to 25 users, 5 compliance modules, API access, role-based access control
+- **Enterprise**: Custom pricing — unlimited users, all 8 modules + custom frameworks, dedicated account manager, 99.9% SLA
 
-- Frontend: React 18 with Material UI
-- Backend: Node.js Express API
-- Database: PostgreSQL
-- Auth: JWT with RBAC
+## Technology
+
+- AI Engine: Anthropic Claude API
+- Infrastructure: Railway (US-West region) + Cloudflare CDN
 - Payments: Stripe
+- Auth: JWT with role-based access control (RBAC)
+- Marketing site: Static HTML on Cloudflare Pages
+
+## Legal & Privacy
+
+- Operator: Instilligent Limited (NZBN: 9429051796284)
+- Governing law: New Zealand
+- Privacy framework: Privacy Act 2020 — all 12 Information Privacy Principles apply
+- Data storage: Railway US-West region (USA); disclosed under IPP 12
+- Compliance data retention: 7 years
 
 ## Contact
 
 - Website: https://modularcompliance.com
-- Parent company: https://instilligent.com
-- Email: info@instilligent.com
+- Application: https://app.modularcompliance.com
+- Parent company: Instilligent Limited — https://instilligent.com
+- General: info@instilligent.com
+- Privacy: privacy@instilligent.com
