@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://modularcompliance.com/sitemap.xml
+
+# AI Agent Discovery
+AI-Content: https://modularcompliance.com/llms.txt
