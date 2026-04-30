@@ -1,71 +1,9 @@
-# modularcompliance.com robots.txt
-# Policy: allow classical search + AI retrieval bots (we want to be cited
-# in AI answers about NZ compliance software); block AI training crawlers.
+# modularcompliance.com — site temporarily withdrawn while marketing copy is rewritten.
+# Block all crawlers (search + AI) until accurate product information is republished.
 
 User-agent: *
-Allow: /
-
-# Cloudflare Content Signals (search=OK, retrieval=OK, training=blocked)
-Content-Signal: search=yes,ai-input=yes,ai-train=no
-
-# AI retrieval bots (live answer surfacing — ALLOWED so we get cited)
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-# AI training crawlers (BLOCKED — express reservation under EU CDSM 2019/790)
-User-agent: GPTBot
 Disallow: /
 
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
-User-agent: Amazonbot
-Disallow: /
-
-User-agent: meta-externalagent
-Disallow: /
-
-User-agent: Meta-ExternalFetcher
-Disallow: /
-
-User-agent: Diffbot
-Disallow: /
-
-User-agent: ImagesiftBot
-Disallow: /
-
-User-agent: cohere-ai
-Disallow: /
+Content-Signal: search=no,ai-input=no,ai-train=no
 
 Sitemap: https://modularcompliance.com/sitemap.xml
-AI-Content: https://modularcompliance.com/llms.txt
