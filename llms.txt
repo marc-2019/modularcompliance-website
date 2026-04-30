@@ -1,14 +1,10 @@
 # Modular Compliance
 
-> Modular Compliance, by Instilligent Limited (NZ). In development. Public marketing copy describing specific product features has been taken down because some claims overstated current capability. No feature inventory is published at this time.
+> Modular Compliance, by Instilligent Limited (NZ). In development. Product details will be published when there is more to share.
 
 ## Status
 
-In development. Marketing copy temporarily withdrawn pending an accurate rewrite.
-
-## What the product actually does today
-
-Modular Compliance holds New Zealand legislation and links the controls and tasks inside a business to specific legislative obligations. Nothing further is claimed about the product at this time.
+In development.
 
 ## Contact
 
