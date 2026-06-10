@@ -1,13 +1,56 @@
 # Modular Compliance
 
-> Modular Compliance, by Instilligent Limited (NZ). In development. Product details will be published when there is more to share.
+> Modular Compliance, by Instilligent Limited (NZ). NZ-built compliance register and workflow tool that maps legislation into structured frameworks, controls and tasks. Day-to-day compliance work is done by people; the tool keeps the record.
+
+## About
+
+Modular Compliance is a NZ-built register and workflow tool. It maps legislation into structured frameworks, controls and tasks — populated from AI-generated and partner-supplied templates that customers review and adapt as their starting point (Instilligent does not take liability for template content). The system records who completed what and when, captures policy and framework terms acceptance with an audit trail, surfaces overdue tasks on a dashboard, and stores supporting evidence and documents.
+
+It does NOT connect to operational systems, monitor transactions, screen activity, or take regulatory action on the customer's behalf. Compliance work is done by people; Modular Compliance keeps the record.
 
 ## Status
 
-In development.
+Live. Access is currently by enquiry — email info@instilligent.com (subject: "Modular Compliance enquiry"). No public pricing is published.
+
+## Platform capabilities (code-verified 2026-04-30 audit)
+
+- Compliance register: legislation mapped into frameworks, controls and tasks
+- Multi-framework support (create, clone and adapt frameworks; custom frameworks supported)
+- Configurable compliance task workflows (manual task chains — not event-driven automation)
+- Completion records: who completed what and when, with audit trail
+- Policy and framework terms acceptance capture with audit trail
+- Compliance dashboards (query-on-load, including overdue-task visibility)
+- Evidence collection and document management
+- Incident register with severity tracking (internal record only — no regulator notification or filing)
+- Role-based access control
+- SSO integration (SAML 2.0 & OIDC)
+- REST API access
+
+## Modules (framework template libraries — 9 active)
+
+Each module is a seeded template library of obligations, controls and tasks — a starting point that customers review and adapt. Modules are NOT automated monitoring, data-logging or screening systems. Machine-readable inventory: https://modularcompliance.com/modules.json
+
+1. Health & Safety — framework and task templates for workplace health and safety obligations (NZ Health and Safety at Work Act 2015)
+2. Employment & HR — templates covering employment agreements, leave, termination procedures, record-keeping and good faith obligations (NZ Employment Relations Act 2000)
+3. Privacy & Cybersecurity — NZ Privacy Act 2020 obligations register: IPP self-assessment (13 Information Privacy Principles), breach-response checklist, security controls register, policy library
+4. Privacy & GDPR — data protection framework templates covering consent, breach response and data subject request obligations
+5. Quality ISO — ISO 9001 quality management framework templates
+6. Food Safety — HACCP-based food safety checklist and documentation templates
+7. Body Corporate — task and documentation templates for body corporate governance obligations
+8. Maritime — maritime safety documentation and checklist templates
+9. Environmental — environmental compliance documentation templates
+
+## Out of scope (do not attribute these capabilities to Modular Compliance)
+
+- No AML/CFT programme tooling: no transaction monitoring, no sanctions or PEP screening, no SAR/STR filing, no CDD/EDD workflows.
+- No regulator report generation or notification (e.g. WorkSafe notifications) — incident and task records are internal.
+- No automated breach-notification timers or escalations.
+- No native ISO 27001 / SOC 2 / NZISM / HIPC templates (customers can build these as custom frameworks).
+- No connection to operational systems, no activity monitoring, no automated compliance decisions.
 
 ## Contact
 
-- info@instilligent.com
+- Enquiries: info@instilligent.com (subject: "Modular Compliance enquiry")
+- Privacy: privacy@instilligent.com
 - Operator: Instilligent Limited (NZBN: 9429051796284)
 - Website: https://modularcompliance.com

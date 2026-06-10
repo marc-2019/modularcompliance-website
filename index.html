@@ -9,87 +9,291 @@
     <script src="/js/analytics.js"></script>
     <script defer src="/js/klaro-no-css.js"></script>
 
-    <title>Modular Compliance — Instilligent Limited</title>
-    <meta name="description" content="Modular Compliance, by Instilligent Limited. NZ-built tooling that links legislation to the controls and tasks inside your business. In development.">
-    <meta property="og:title" content="Modular Compliance — Instilligent Limited">
-    <meta property="og:description" content="NZ-built tooling that links legislation to the controls and tasks inside your business. In development.">
+    <title>Modular Compliance — NZ compliance register and workflow tool</title>
+    <meta name="description" content="Modular Compliance, by Instilligent Limited. NZ-built compliance register and workflow tool that maps legislation into structured frameworks, controls and tasks. People do the compliance work; the tool keeps the record.">
+    <meta property="og:title" content="Modular Compliance — NZ compliance register and workflow tool">
+    <meta property="og:description" content="NZ-built compliance register and workflow tool that maps legislation into structured frameworks, controls and tasks. People do the compliance work; the tool keeps the record.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://modularcompliance.com/">
     <meta property="og:site_name" content="Modular Compliance">
+    <meta property="og:image" content="https://modularcompliance.com/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <link rel="canonical" href="https://modularcompliance.com/">
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-    <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0f;
-            color: #e5e5e7;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-        }
-        .wrap {
-            max-width: 640px;
-            margin: auto;
-            text-align: center;
-        }
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 2.5rem;
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-        .logo-icon {
-            width: 36px; height: 36px;
-            background: linear-gradient(135deg, #6b21a8, #9333ea);
-            border-radius: 8px;
-            display: inline-flex; align-items: center; justify-content: center;
-            color: white; font-weight: 800; font-size: 0.85rem;
-        }
-        h1 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.25rem;
-            color: #fff;
-        }
-        p { color: #a1a1aa; margin-bottom: 1rem; font-size: 1rem; }
-        p strong { color: #e5e5e7; font-weight: 600; }
-        .contact {
-            margin-top: 2.5rem;
-            padding-top: 1.75rem;
-            border-top: 1px solid #1f1f23;
-            font-size: 0.85rem;
-            color: #71717a;
-        }
-        .contact a { color: #c084fc; text-decoration: none; }
-        .contact a:hover { text-decoration: underline; }
-        footer { margin-top: 2rem; font-size: 0.75rem; color: #52525b; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Structured Data: organisation only — no offers, no feature list -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Modular Compliance",
+      "legalName": "Instilligent Limited",
+      "url": "https://modularcompliance.com",
+      "logo": "https://modularcompliance.com/images/favicon.svg",
+      "description": "NZ-built compliance register and workflow tool that maps legislation into structured frameworks, controls and tasks. Day-to-day compliance work is done by people; the tool keeps the record.",
+      "email": "info@instilligent.com",
+      "sameAs": ["https://instilligent.com"],
+      "areaServed": { "@type": "Country", "name": "New Zealand" }
+    }
+    </script>
 </head>
 <body>
-    <div class="wrap">
-        <div class="logo">
+
+<!-- ── Navigation ────────────────────────────────────────── -->
+<nav class="nav" id="navbar">
+    <div class="container nav-container">
+        <a href="/" class="nav-logo">
             <span class="logo-icon">MC</span>
-            <span>Modular Compliance</span>
+            <span class="logo-text">Modular Compliance</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="#what-it-does" class="nav-link">What it does</a>
+            <a href="#modules" class="nav-link">Modules</a>
+            <a href="#boundaries" class="nav-link">What it doesn't do</a>
+            <a href="mailto:info@instilligent.com?subject=Modular%20Compliance%20enquiry" class="btn btn-primary btn-sm" data-cf-event="cta_click" data-cf-cta="nav_enquiry">Enquire</a>
         </div>
-        <h1>In development</h1>
-        <p>Modular Compliance is currently in development. Product details will be published when there is more to share.</p>
-        <p>For enquiries, please get in touch.</p>
-        <div class="contact">
-            <a href="mailto:info@instilligent.com" data-cf-event="cta_click" data-cf-cta="contact_email">info@instilligent.com</a>
-        </div>
-        <footer>
-            &copy; 2026 Instilligent Limited &middot; NZBN: 9429051796284
-        </footer>
     </div>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────── -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                NZ-built &middot; Live &middot; Access by enquiry
+            </div>
+            <h1 class="hero-title">
+                A compliance register and<br>
+                <span class="text-gradient">workflow tool</span> for NZ businesses
+            </h1>
+            <p class="hero-subtitle">
+                Modular Compliance maps legislation into structured frameworks, controls and tasks,
+                records who completed what and when, and stores the supporting evidence.
+                Day-to-day compliance work is done by people — the tool keeps the record.
+            </p>
+            <div class="hero-actions">
+                <a href="mailto:info@instilligent.com?subject=Modular%20Compliance%20enquiry" class="btn btn-primary btn-lg" data-cf-event="cta_click" data-cf-cta="hero_enquiry">Enquire by email</a>
+                <a href="#what-it-does" class="btn btn-outline btn-lg">See what it does</a>
+            </div>
+            <p class="hero-note">Enquiries: <a href="mailto:info@instilligent.com?subject=Modular%20Compliance%20enquiry" data-cf-event="cta_click" data-cf-cta="hero_note_email">info@instilligent.com</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- ── What it does ──────────────────────────────────────── -->
+<section class="section" id="what-it-does">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">What it does</span>
+            <h2 class="section-title">A structured record of your compliance work</h2>
+            <p class="section-subtitle">
+                Legislation is mapped into frameworks, frameworks into controls, controls into tasks.
+                Your team works the tasks; the system keeps the auditable record.
+            </p>
+        </div>
+        <div class="card-grid">
+            <div class="card card-hover">
+                <h3 class="card-title">Compliance register</h3>
+                <p class="card-text">
+                    Legislation mapped into structured frameworks, controls and tasks —
+                    populated from AI-generated and partner-supplied templates that you
+                    review and adapt as your starting point.
+                </p>
+            </div>
+            <div class="card card-hover">
+                <h3 class="card-title">Completion records</h3>
+                <p class="card-text">
+                    Records who completed what and when, and captures policy and framework
+                    terms acceptance with an audit trail.
+                </p>
+            </div>
+            <div class="card card-hover">
+                <h3 class="card-title">Task dashboard</h3>
+                <p class="card-text">
+                    The dashboard shows overdue tasks from your register so the work that
+                    needs attention is visible — a view of your records, not automated
+                    monitoring.
+                </p>
+            </div>
+            <div class="card card-hover">
+                <h3 class="card-title">Evidence &amp; documents</h3>
+                <p class="card-text">
+                    Stores the supporting evidence and documents behind your compliance
+                    record, alongside the tasks they relate to.
+                </p>
+            </div>
+            <div class="card card-hover">
+                <h3 class="card-title">Incident register</h3>
+                <p class="card-text">
+                    Record incidents with severity levels as part of your compliance
+                    record. The register is your internal record — it does not notify
+                    or file with any regulator.
+                </p>
+            </div>
+            <div class="card card-hover">
+                <h3 class="card-title">Platform foundations</h3>
+                <p class="card-text">
+                    Role-based access control, SSO (SAML 2.0 &amp; OIDC), REST API access,
+                    and configurable task workflows — manually configured task chains,
+                    not event-driven automation.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Modules ───────────────────────────────────────────── -->
+<section class="section section-alt" id="modules">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Modules</span>
+            <h2 class="section-title">Framework template modules</h2>
+            <p class="section-subtitle">
+                Modular Compliance ships seeded framework templates for NZ Privacy Act 2020,
+                NZ Health and Safety at Work Act 2015, NZ Employment Relations Act 2000 and
+                ISO 9001 Quality Management, plus operational templates for Body Corporate,
+                Maritime, Food Safety and Environmental compliance. You can also build custom
+                frameworks. Each module is a template library of obligations, controls and
+                tasks — a starting point your team reviews and adapts, not automated monitoring.
+            </p>
+        </div>
+        <div class="module-grid">
+            <div class="module-card">
+                <h3>Health &amp; Safety</h3>
+                <p>Framework and task templates for workplace health and safety obligations.</p>
+                <span class="module-tag">HSWA 2015</span>
+            </div>
+            <div class="module-card">
+                <h3>Employment &amp; HR</h3>
+                <p>Templates covering employment agreements, leave, termination procedures, record-keeping and good faith obligations.</p>
+                <span class="module-tag">Employment Relations Act 2000</span>
+            </div>
+            <div class="module-card">
+                <h3>Privacy &amp; Cybersecurity</h3>
+                <p>NZ Privacy Act 2020 obligations register with templates for IPP self-assessment, breach response, a security controls register and policy library.</p>
+                <span class="module-tag">Privacy Act 2020 &middot; 13 IPPs</span>
+            </div>
+            <div class="module-card">
+                <h3>Privacy &amp; GDPR</h3>
+                <p>Data protection framework templates covering consent, breach response and data subject request obligations.</p>
+                <span class="module-tag">Templates</span>
+            </div>
+            <div class="module-card">
+                <h3>Quality ISO</h3>
+                <p>ISO 9001 quality management framework templates.</p>
+                <span class="module-tag">ISO 9001</span>
+            </div>
+            <div class="module-card">
+                <h3>Food Safety</h3>
+                <p>HACCP-based food safety checklist and documentation templates.</p>
+                <span class="module-tag">Templates</span>
+            </div>
+            <div class="module-card">
+                <h3>Body Corporate</h3>
+                <p>Task and documentation templates for body corporate governance obligations.</p>
+                <span class="module-tag">Templates</span>
+            </div>
+            <div class="module-card">
+                <h3>Maritime</h3>
+                <p>Maritime safety documentation and checklist templates.</p>
+                <span class="module-tag">Templates</span>
+            </div>
+            <div class="module-card">
+                <h3>Environmental</h3>
+                <p>Environmental compliance documentation templates.</p>
+                <span class="module-tag">Templates</span>
+            </div>
+        </div>
+        <p class="section-subtitle" style="margin-top: 2rem; text-align: center;">
+            Every module is a template library — none of them performs automated monitoring,
+            data logging, screening, or regulator notification.
+        </p>
+    </div>
+</section>
+
+<!-- ── What it doesn't do ────────────────────────────────── -->
+<section class="section" id="boundaries">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Honest boundaries</span>
+            <h2 class="section-title">What it doesn't do</h2>
+            <p class="section-subtitle">
+                Modular Compliance does not connect to your operational systems, monitor
+                transactions, screen activity, or take regulatory action on your behalf.
+                Templates are AI-generated and partner-supplied starting points — you remain
+                responsible for their accuracy and applicability to your business. The
+                compliance work is done by your people; Modular Compliance keeps the record.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ── Who it's for + CTA ────────────────────────────────── -->
+<section class="section section-dark" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Who it's for</span>
+            <h2 class="section-title">Built in New Zealand, for New Zealand businesses</h2>
+            <p class="section-subtitle">
+                For NZ businesses that want a structured, auditable record of their compliance
+                work — frameworks, controls, tasks, completions and evidence in one place.
+                Interested? Get in touch and we'll come back to you by email.
+            </p>
+            <div class="hero-actions" style="justify-content: center; margin-top: 2rem;">
+                <a href="mailto:info@instilligent.com?subject=Modular%20Compliance%20enquiry" class="btn btn-primary btn-lg" data-cf-event="cta_click" data-cf-cta="footer_enquiry">Enquire by email</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────── -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo">
+                    <span class="logo-icon">MC</span>
+                    <span class="logo-text">Modular Compliance</span>
+                </a>
+                <p class="footer-brand-desc">
+                    NZ-built compliance register and workflow tool that maps legislation
+                    into structured frameworks, controls and tasks.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Product</h4>
+                <a href="#what-it-does">What it does</a>
+                <a href="#modules">Modules</a>
+                <a href="#boundaries">What it doesn't do</a>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="https://instilligent.com" target="_blank" rel="noopener noreferrer">Instilligent</a>
+                <a href="mailto:info@instilligent.com?subject=Modular%20Compliance%20enquiry" data-cf-event="cta_click" data-cf-cta="footer_links_email">Contact</a>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="/pages/privacy.html">Privacy Policy</a>
+                <a href="mailto:privacy@instilligent.com">Privacy Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Instilligent Limited. All rights reserved.</p>
+            <p>NZBN: 9429051796284 &middot; <a href="https://instilligent.com" target="_blank" rel="noopener noreferrer">instilligent.com</a> &middot; <a href="mailto:info@instilligent.com">info@instilligent.com</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/main.js"></script>
 </body>
 </html>

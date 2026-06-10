@@ -1,12 +1,94 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "product": "Modular Compliance",
   "operator": "Instilligent Limited",
   "operator_nzbn": "9429051796284",
   "product_url": "https://modularcompliance.com",
-  "last_updated": "2026-04-30",
-  "status": "in_development",
-  "note": "Module inventory withdrawn pending an accurate rewrite. Previous public claims overstated current capability.",
-  "total_active": 0,
-  "modules": []
+  "last_updated": "2026-06-11",
+  "status": "live",
+  "note": "Inventory derived from the product's module registry (compliance.compliance_modules). Each module is a seeded template library of obligations, controls and tasks that customers review and adapt — not automated monitoring, data-logging or screening. People do the compliance work; the tool keeps the record.",
+  "total_active": 9,
+  "modules": [
+    {
+      "id": "health_safety",
+      "name": "Health & Safety",
+      "kind": "framework_templates",
+      "legislation": ["Health and Safety at Work Act 2015 (NZ)"],
+      "status": "active",
+      "description": "Framework and task templates for workplace health and safety obligations."
+    },
+    {
+      "id": "employment_hr",
+      "name": "Employment & HR",
+      "kind": "framework_templates",
+      "legislation": ["Employment Relations Act 2000 (NZ)"],
+      "status": "active",
+      "description": "Templates covering employment agreements, leave, termination procedures, record-keeping and good faith obligations."
+    },
+    {
+      "id": "privacy_cybersecurity",
+      "name": "Privacy & Cybersecurity",
+      "kind": "framework_templates",
+      "legislation": ["Privacy Act 2020 (NZ) — 13 Information Privacy Principles"],
+      "status": "active",
+      "description": "NZ Privacy Act 2020 obligations register: IPP self-assessment templates, breach-response checklist, security controls register, policy library."
+    },
+    {
+      "id": "privacy_gdpr",
+      "name": "Privacy & GDPR",
+      "kind": "framework_templates",
+      "legislation": [],
+      "status": "active",
+      "description": "Data protection framework templates covering consent, breach response and data subject request obligations."
+    },
+    {
+      "id": "quality_iso",
+      "name": "Quality ISO",
+      "kind": "framework_templates",
+      "legislation": [],
+      "status": "active",
+      "description": "ISO 9001 quality management framework templates."
+    },
+    {
+      "id": "food_safety",
+      "name": "Food Safety",
+      "kind": "framework_templates",
+      "legislation": [],
+      "status": "active",
+      "description": "HACCP-based food safety checklist and documentation templates."
+    },
+    {
+      "id": "body_corporate",
+      "name": "Body Corporate",
+      "kind": "framework_templates",
+      "legislation": [],
+      "status": "active",
+      "description": "Task and documentation templates for body corporate governance obligations."
+    },
+    {
+      "id": "maritime_moss",
+      "name": "Maritime",
+      "kind": "framework_templates",
+      "legislation": [],
+      "status": "active",
+      "description": "Maritime safety documentation and checklist templates."
+    },
+    {
+      "id": "environmental",
+      "name": "Environmental",
+      "kind": "framework_templates",
+      "legislation": [],
+      "status": "active",
+      "description": "Environmental compliance documentation templates."
+    }
+  ],
+  "removed": [
+    {
+      "id": "financial_aml",
+      "name": "Financial AML",
+      "status": "withdrawn",
+      "removed": "2026-04-30",
+      "reason": "Withdrawn. AML/CFT capability (transaction monitoring, sanctions/PEP screening, SAR/STR filing) is not offered by Modular Compliance."
+    }
+  ]
 }
