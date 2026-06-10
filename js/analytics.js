@@ -1,15 +1,20 @@
-/* GA4 + Klaro consent + Consent Mode v2
- * Replace GTM_ID below with the real container ID from GA4 admin once provisioned.
+/* GA4 (direct gtag.js) + Klaro consent + Consent Mode v2
+ * Property: G-NQZ08PD0MJ (Modular Compliance — verified own property; no GTM container).
+ * Order matters: Consent Mode v2 defaults are pushed to the dataLayer BEFORE the
+ * gtag.js script is injected, so GA4 starts in the denied state (cookieless pings only).
+ * Klaro grants analytics_storage ONLY on accept; advertising signals stay denied always.
  * Vendor files: /js/klaro-no-css.js + /js/klaro.min.css (Klaro v0.7.21).
  */
 (function () {
-  var GTM_ID = "GTM-PLACEHOLDER";
-  var SITE_LABEL = "Modular Compliance";
+  var GA4_ID = "G-NQZ08PD0MJ";
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = gtag;
 
+  // Consent Mode v2 — default DENIED for all measurement/advertising signals.
+  // This MUST run before the gtag.js script loads (it does: this file is a
+  // synchronous script in <head>, the loader below appends an async script).
   gtag("consent", "default", {
     ad_storage: "denied",
     analytics_storage: "denied",
@@ -20,16 +25,17 @@
     wait_for_update: 500
   });
 
-  (function (w, d, s, l, i) {
-    w[l] = w[l] || [];
-    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-    var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l !== "dataLayer" ? "&l=" + l : "";
+  gtag("js", new Date());
+  gtag("config", GA4_ID, { anonymize_ip: true });
+
+  // Load gtag.js (async) — consent defaults above are already in the dataLayer.
+  (function (d, s) {
+    var j = d.createElement(s),
+        f = d.getElementsByTagName(s)[0];
     j.async = true;
-    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    j.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
     f.parentNode.insertBefore(j, f);
-  })(window, document, "script", "dataLayer", GTM_ID);
+  })(document, "script");
 
   window.klaroConfig = {
     version: 1,
@@ -47,14 +53,16 @@
         name: "google-analytics",
         title: "Google Analytics",
         description:
-          "Anonymous analytics so we can understand which content visitors find useful on " +
-          SITE_LABEL + ".",
+          "Usage analytics — helps us understand how visitors use this site.",
         purposes: ["analytics"],
         cookies: [/^_ga/, /^_gid/, /^_gat/],
+        // Accept: grant analytics_storage ONLY. Advertising signals remain denied —
+        // privacy policy §11: no advertising/tracking cookies for marketing.
         onAccept:
-          "gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});",
+          "gtag('consent','update',{analytics_storage:'granted'});",
+        // Decline: revoke analytics AND all advertising signals.
         onDecline:
-          "gtag('consent','update',{analytics_storage:'denied'});"
+          "gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});"
       }
     ],
     translations: {
