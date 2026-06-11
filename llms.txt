@@ -10,7 +10,15 @@ It does NOT connect to operational systems, monitor transactions, screen activit
 
 ## Status
 
-Live. Access is currently by enquiry — email info@instilligent.com (subject: "Modular Compliance enquiry"). No public pricing is published.
+Live. Access is currently by enquiry — email info@instilligent.com (subject: "Modular Compliance enquiry"). Public pricing: Starter NZ$199/month, Professional NZ$499/month, Enterprise by enquiry (all prices NZD, + GST).
+
+## Pricing (NZD, excluding GST)
+
+- Starter — NZ$199/month + GST: up to 5 users, up to 2 compliance frameworks, 5 GB document storage, email support.
+- Professional — NZ$499/month + GST: up to 25 users, up to 5 compliance frameworks, 25 GB document storage, REST API access.
+- Enterprise — contact us for pricing: unlimited users, as many compliance frameworks as you need, SSO integration (SAML 2.0 & OIDC).
+- Optional add-ons: build-your-own custom modules NZ$49/month for the first and NZ$25/month each additional; extra users NZ$25/user/month (Starter) or NZ$15/user/month (Professional); extra document storage NZ$5/GB/month.
+- Access is by enquiry — there is no self-serve checkout. Email info@instilligent.com.
 
 ## Platform capabilities (code-verified 2026-04-30 audit)
 
@@ -23,8 +31,8 @@ Live. Access is currently by enquiry — email info@instilligent.com (subject: "
 - Evidence collection and document management
 - Incident register with severity tracking (internal record only — no regulator notification or filing)
 - Role-based access control
-- SSO integration (SAML 2.0 & OIDC)
-- REST API access
+- SSO integration (SAML 2.0 & OIDC) — Enterprise tier
+- REST API access — Professional tier and above
 
 ## Modules (framework template libraries — 9 active)
 
