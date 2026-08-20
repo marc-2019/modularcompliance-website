@@ -1220,6 +1220,7 @@ a:hover { color: var(--purple-300); }
     }
     .nav-links.open { display: flex; }
     .nav-link { text-align: center; }
+    .nav-links .btn { width: 100%; justify-content: center; margin-left: 0; }
 
     .hero { min-height: 85vh; }
     .hero-stats { flex-wrap: wrap; gap: var(--sp-xl); }

@@ -10,7 +10,7 @@ It does NOT connect to operational systems, monitor transactions, screen activit
 
 ## Status
 
-Live. Access is currently by enquiry — email info@instilligent.com (subject: "Modular Compliance enquiry"). Public pricing: Starter NZ$199/month, Professional NZ$499/month, Enterprise by enquiry (all prices NZD, + GST).
+Live. Register or log in on the app at https://app.modularcompliance.com/register and https://app.modularcompliance.com/login. Public pricing: Starter NZ$199/month, Professional NZ$499/month, Enterprise by enquiry (all prices NZD, + GST). This marketing site does not take card payment. Questions: info@instilligent.com.
 
 ## Pricing (NZD, excluding GST)
 
@@ -18,7 +18,7 @@ Live. Access is currently by enquiry — email info@instilligent.com (subject: "
 - Professional — NZ$499/month + GST: up to 25 users, up to 5 compliance frameworks, 25 GB document storage, REST API access.
 - Enterprise — contact us for pricing: unlimited users, as many compliance frameworks as you need, SSO integration (SAML 2.0 & OIDC).
 - Optional add-ons: build-your-own custom modules NZ$49/month for the first and NZ$25/month each additional; extra users NZ$25/user/month (Starter) or NZ$15/user/month (Professional); extra document storage NZ$5/GB/month.
-- Access is by enquiry — there is no self-serve checkout. Email info@instilligent.com.
+- Register for Starter or Professional on the app (https://app.modularcompliance.com/register). This marketing site does not take card payment. Enterprise is by enquiry — email info@instilligent.com.
 
 ## Platform capabilities (code-verified 2026-04-30 audit)
 
@@ -58,7 +58,8 @@ Each module is a seeded template library of obligations, controls and tasks — 
 
 ## Contact
 
-- Enquiries: info@instilligent.com (subject: "Modular Compliance enquiry")
+- App: https://app.modularcompliance.com/login (log in) and https://app.modularcompliance.com/register (register)
+- Questions: info@instilligent.com
 - Privacy: privacy@instilligent.com
-- Operator: Instilligent Limited (NZBN: 9429051796284)
+- Operator: Instilligent Limited (NZBN: 9429041896853)
 - Website: https://modularcompliance.com
