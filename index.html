@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Structured Data: organisation only — no offers, no feature list -->
+    <!-- Structured Data: Organization + SoftwareApplication. No FAQ schema (no visible FAQ). No aggregateRating. Offers omitted so price copy stays only in #pricing (NZ$199 / NZ$499 + GST). -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,6 +38,27 @@
       "description": "NZ-built compliance register and workflow tool that maps legislation into structured frameworks, controls and tasks. Day-to-day compliance work is done by people; the tool keeps the record.",
       "email": "info@instilligent.com",
       "sameAs": ["https://instilligent.com"],
+      "areaServed": { "@type": "Country", "name": "New Zealand" },
+      "identifier": { "@type": "PropertyValue", "name": "NZBN", "value": "9429041896853" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Modular Compliance",
+      "alternateName": "Modular Compliance by Instilligent",
+      "url": "https://modularcompliance.com",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "NZ-built compliance register and workflow tool that maps legislation into structured frameworks, controls and tasks. Day-to-day compliance work is done by people; the tool keeps the record. It does not connect to operational systems, monitor transactions, screen activity, or take regulatory action.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Instilligent Limited",
+        "url": "https://instilligent.com",
+        "identifier": { "@type": "PropertyValue", "name": "NZBN", "value": "9429041896853" }
+      },
+      "isAccessibleForFree": false,
       "areaServed": { "@type": "Country", "name": "New Zealand" }
     }
     </script>

@@ -1,6 +1,16 @@
 # modularcompliance.com robots.txt
-# Policy: allow classical search + AI retrieval bots (we want to be cited
-# in AI answers about NZ compliance software); block AI training crawlers.
+# Policy: classical search + AI retrieval/citation allowed; AI training blocked.
+#
+# Anthropic (2026): Claude-SearchBot + Claude-User = citation/retrieval;
+# ClaudeBot = training. Do not Allow ClaudeBot if the intent is "cite, don't train".
+# Deprecated tokens Claude-Web / anthropic-ai are kept as Allow no-ops.
+#
+# Cloudflare may prepend "# BEGIN Cloudflare Managed content" at the edge
+# (AI Crawl Control / Bot Preference Sync). Origin edits cannot remove that
+# prepend. Marc EXTERNAL: dashboard → AI Crawl Control on this zone — allow
+# search/citation crawlers (OAI-SearchBot, Claude-SearchBot, Claude-User,
+# PerplexityBot); keep training blocked (ClaudeBot, GPTBot, Google-Extended).
+# See marketing-audits/modular-compliance-2026-08-26-geo-crawlers.md
 
 User-agent: *
 Allow: /
@@ -8,20 +18,17 @@ Allow: /
 # Cloudflare Content Signals (search=OK, retrieval=OK, training=blocked)
 Content-Signal: search=yes,ai-input=yes,ai-train=no
 
-# AI retrieval bots (live answer surfacing — ALLOWED so we get cited)
+# AI retrieval / citation (ALLOWED so we can be cited in answers)
 User-agent: ChatGPT-User
 Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: Claude-SearchBot
 Allow: /
 
-User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
+User-agent: Claude-User
 Allow: /
 
 User-agent: PerplexityBot
@@ -33,7 +40,17 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-# AI training crawlers (BLOCKED — express reservation under EU CDSM 2019/790)
+# Deprecated Anthropic tokens (no-op if unused)
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# AI training crawlers (BLOCKED — EU CDSM 2019/790 reservation)
+User-agent: ClaudeBot
+Disallow: /
+
 User-agent: GPTBot
 Disallow: /
 
