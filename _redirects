@@ -1,4 +1,7 @@
 /pricing    /    301
 /features   /    301
-/about      /    301
-/privacy    /pages/privacy.html    301
+/about      /pages/about.html    200
+/privacy    /pages/privacy.html    200
+/terms      /pages/terms.html    200
+/security   /pages/security.html    200
+/contact    /pages/contact.html    200

@@ -54,3 +54,40 @@ test('no free-trial bait on primary surfaces', () => {
 test('og image file exists', () => {
   assert.equal(existsSync(join(root, 'images/og-image.png')), true)
 })
+
+test('Phase A foundation pages exist and are wired via _redirects', () => {
+  const redirects = read('_redirects')
+  for (const [route, file] of [
+    ['/about', 'pages/about.html'],
+    ['/privacy', 'pages/privacy.html'],
+    ['/terms', 'pages/terms.html'],
+    ['/security', 'pages/security.html'],
+    ['/contact', 'pages/contact.html'],
+  ]) {
+    assert.equal(existsSync(join(root, file)), true, file)
+    assert.match(redirects, new RegExp(`^${route.replace('/', '\\/')}\\s+\\/${file.replace('/', '\\/')}\\s+200`, 'm'))
+  }
+})
+
+test('new pages carry the correct NZBN and no fabricated certifications', () => {
+  for (const f of ['pages/about.html', 'pages/contact.html', 'pages/security.html', 'pages/terms.html']) {
+    const t = read(f)
+    assert.match(t, /9429041896853/, f)
+    assert.doesNotMatch(t, /compliant with/i, f)
+    assert.equal(/free\s+trial/i.test(t), false, f)
+    assert.doesNotMatch(t, /SOC\s*2\s+certif/i, f)
+    assert.doesNotMatch(t, /ISO\s*27001\s+certif/i, f)
+  }
+})
+
+test('security page explicitly disclaims certifications it does not hold', () => {
+  const t = read('pages/security.html')
+  assert.match(t, /does not hold ISO.{0,20}27001, SOC.{0,10}2/i)
+})
+
+test('sitemap includes all Phase A URLs', () => {
+  const s = read('sitemap.xml')
+  for (const path of ['/', '/about', '/privacy', '/terms', '/security', '/contact']) {
+    assert.match(s, new RegExp(`<loc>https://modularcompliance\\.com${path.replace('/', '\\/')}</loc>`))
+  }
+})
