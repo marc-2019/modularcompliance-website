@@ -44,10 +44,19 @@ test('llms.txt uses the Instilligent Limited NZBN', () => {
   assert.doesNotMatch(t, /9429051796284/)
 })
 
-test('no free-trial bait on primary surfaces', () => {
+test('homepage and llms.txt match live self-serve trial (no invented Enterprise price)', () => {
   for (const f of ['index.html', 'llms.txt']) {
     const t = read(f)
-    assert.equal(/free\s+trial/i.test(t), false, f)
+    assert.match(t, /14-day free trial/i, f)
+    assert.match(t, /no credit card required/i, f)
+    assert.match(t, /Start Free Trial/)
+    assert.match(t, /https:\/\/app\.modularcompliance\.com\/register/)
+    assert.match(t, /NZ\$199/)
+    assert.match(t, /NZ\$499/)
+    assert.match(t, /Enterprise is by enquiry/)
+    assert.doesNotMatch(t, /\$999/, f)
+    assert.doesNotMatch(t, /NZ\$999/, f)
+    assert.match(t, /9429041896853/)
   }
 })
 
