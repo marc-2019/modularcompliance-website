@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Analytics + consent: GA4 G-NQZ08PD0MJ via consent-gated gtag (Klaro + Consent Mode v2, default denied) in /js/analytics.js. -->
+    <link rel="stylesheet" href="/js/klaro.min.css">
+    <script src="/js/analytics.js"></script>
+    <script defer src="/js/klaro-no-css.js"></script>
+
+    <title>NZ Privacy Act 2020 — IPP self-check (educational) — Modular Compliance</title>
+    <meta name="description" content="Walk through the 13 Information Privacy Principles. Tick what you already have in place. Progress is saved in this browser only. Not legal advice, not a certification.">
+    <meta property="og:title" content="NZ Privacy Act 2020 — IPP self-check (educational)">
+    <meta property="og:description" content="Walk through the 13 Information Privacy Principles. Browser-only progress. Not legal advice, not a certification, and not a claim that you are Privacy Act compliant.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://modularcompliance.com/privacy-ipp-checklist">
+    <meta property="og:site_name" content="Modular Compliance">
+    <meta property="og:image" content="https://modularcompliance.com/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <link rel="canonical" href="https://modularcompliance.com/privacy-ipp-checklist">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Modular Compliance", "item": "https://modularcompliance.com/" },
+        { "@type": "ListItem", "position": 2, "name": "NZ Privacy Act 2020 — IPP self-check (educational)", "item": "https://modularcompliance.com/privacy-ipp-checklist" }
+      ]
+    }
+    </script>
+    <style>
+        .policy-body { max-width: 800px; margin: 0 auto; padding: 0 var(--sp-lg); }
+        .policy-section { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+        .policy-section:last-child { border-bottom: none; }
+        .policy-section h1 { font-size: var(--text-3xl); font-weight: 800; color: var(--text); margin-bottom: 0.75rem; line-height: 1.25; }
+        .policy-section h2 { font-size: var(--text-xl); font-weight: 700; color: var(--text); margin-bottom: 1rem; }
+        .policy-section p { color: var(--text-muted); line-height: 1.75; margin-bottom: 0.85rem; }
+        .policy-section p:last-child { margin-bottom: 0; }
+        .policy-section a { color: var(--purple-400); }
+        .policy-section a:hover { color: var(--purple-300); }
+        .info-box { padding: 1rem 1.25rem; background: rgba(107,33,168,0.08); border: 1px solid rgba(107,33,168,0.25); border-radius: var(--r-lg); margin: 1rem 0; }
+        .info-box p { margin-bottom: 0; color: var(--text-muted); font-size: var(--text-sm); }
+        .magnet-section { padding-top: var(--sp-xl); }
+        .breadcrumb { font-size: var(--text-sm); color: var(--text-dim); margin: 5.5rem auto 0; max-width: 800px; padding: 0 var(--sp-lg); }
+        .breadcrumb a { color: var(--text-dim); }
+        .breadcrumb a:hover { color: var(--purple-400); }
+        .overline { display: block; font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--purple-400); margin-bottom: 0.75rem; }
+        .magnet-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+        .progress-card { padding: 1.25rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg); margin-bottom: 1.5rem; }
+        .progress-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem; }
+        .progress-row strong { color: var(--text); }
+        .progress-pct { color: var(--text-muted); font-size: var(--text-sm); }
+        .progress-bar { height: 8px; border-radius: var(--r-sm); background: rgba(255,255,255,0.08); overflow: hidden; }
+        .progress-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--purple-700), var(--purple-500)); border-radius: var(--r-sm); transition: width var(--t); }
+        .ipp-card { padding: 1.25rem 1.5rem; margin-bottom: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg); }
+        .ipp-card h2 { font-size: var(--text-lg); font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+        .ipp-ref { display: block; font-size: var(--text-xs); color: var(--text-dim); margin-bottom: 0.65rem; }
+        .ipp-card p { color: var(--text-muted); line-height: 1.7; margin-bottom: 0.85rem; }
+        .ipp-check { display: flex; align-items: flex-start; gap: 0.65rem; color: var(--text); font-size: var(--text-sm); line-height: 1.55; cursor: pointer; }
+        .ipp-check input { margin-top: 0.2rem; width: 1.05rem; height: 1.05rem; accent-color: var(--purple-600); flex-shrink: 0; }
+        .cta-box { padding: 1.5rem; background: linear-gradient(135deg, rgba(107,33,168,0.22), rgba(88,28,135,0.18)); border: 1px solid rgba(107,33,168,0.35); border-radius: var(--r-lg); }
+        .cta-box h2 { color: var(--text); font-size: var(--text-xl); margin-bottom: 0.65rem; }
+        .cta-box p { color: var(--text-muted); margin-bottom: 1rem; }
+        @media print {
+            .nav, .footer, .no-print, .magnet-actions { display: none !important; }
+            body { background: #fff; color: #111; }
+            .policy-section h1, .ipp-card h2, .cta-box h2 { color: #111; }
+            .policy-section p, .ipp-card p, .ipp-ref, .info-box p, .cta-box p { color: #333; }
+            .ipp-card, .progress-card, .info-box, .cta-box { border: 1px solid #ccc; background: #fff; break-inside: avoid; }
+            .breadcrumb { margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav" id="navbar">
+    <div class="container nav-container">
+        <a href="/" class="nav-logo">
+            <span class="logo-icon">MC</span>
+            <span class="logo-text">Modular Compliance</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="/#what-it-does" class="nav-link">What it does</a>
+            <a href="/#modules" class="nav-link">Modules</a>
+            <a href="/#boundaries" class="nav-link">What it doesn't do</a>
+            <a href="/#pricing" class="nav-link">Pricing</a>
+            <a href="https://app.modularcompliance.com/login" class="nav-link" data-cf-event="cta_click" data-cf-cta="nav_login">Log in</a>
+            <a href="https://app.modularcompliance.com/register" class="btn btn-primary btn-sm" data-cf-event="cta_click" data-cf-cta="nav_register">Start Free Trial</a>
+        </div>
+    </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Modular Compliance</a> / IPP self-check
+</nav>
+
+<div class="section magnet-section">
+    <div class="policy-body">
+
+        <div class="policy-section">
+            <span class="overline">Modular Compliance · Free educational tool</span>
+            <h1>NZ Privacy Act 2020 — IPP self-check (educational)</h1>
+            <p>
+                Walk through the 13 Information Privacy Principles. Tick what you already have in place.
+                Progress is saved in this browser only.
+            </p>
+            <div class="info-box">
+                <p>
+                    This is an educational self-check to help you discuss Privacy Act 2020 IPPs with your team.
+                    It is not legal advice, not a certification, and does not mean you are “Privacy Act compliant”.
+                    People do the compliance work; tools help you keep the record.
+                </p>
+            </div>
+            <div class="magnet-actions no-print">
+                <a href="https://app.modularcompliance.com/#/privacy-ipp-checklist" class="btn btn-primary btn-md" data-cf-event="cta_click" data-cf-cta="ipp_open_in_app">Open in app</a>
+                <a href="https://app.modularcompliance.com/register" class="btn btn-outline btn-md" data-cf-event="cta_click" data-cf-cta="ipp_register">Start Free Trial</a>
+                <button type="button" class="btn btn-ghost btn-md" id="printChecklist">Print checklist</button>
+            </div>
+        </div>
+
+        <div class="policy-section" style="border-bottom:none; padding-bottom:0;">
+            <div class="progress-card" aria-live="polite">
+                <div class="progress-row">
+                    <strong id="progressLabel">Progress: 0 / 13</strong>
+                    <span class="progress-pct" id="progressPct">0%</span>
+                </div>
+                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <article class="ipp-card" data-ipp-id="ipp-1">
+                <h2>IPP 1: Purpose of collection</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 1</span>
+                <p>Personal information should only be collected for a lawful purpose connected with your functions.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-1">
+                    We have documented why we collect each category of personal information.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-2">
+                <h2>IPP 2: Source of personal information</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 2</span>
+                <p>Collect personal information from the individual concerned where practicable.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-2">
+                    We collect from the person themselves unless we have a clear exception reason.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-3">
+                <h2>IPP 3: What to tell people when collecting</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 3</span>
+                <p>When collecting, take reasonable steps so people know who you are, why you collect, and what happens to their information.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-3">
+                    Our forms/notices explain who we are, purpose, and who we share with.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-4">
+                <h2>IPP 4: Manner of collection</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 4</span>
+                <p>Collection must be lawful, fair, and not unreasonably intrusive.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-4">
+                    We do not collect by deceptive or overly intrusive means.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-5">
+                <h2>IPP 5: Storage and security</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 5</span>
+                <p>Take reasonable steps to protect personal information against loss, access, use, modification or disclosure.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-5">
+                    We have access controls, backups, and a plan for incidents.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-6">
+                <h2>IPP 6: Access</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 6</span>
+                <p>People can request access to their personal information you hold.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-6">
+                    We know how to receive and respond to access requests.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-7">
+                <h2>IPP 7: Correction</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 7</span>
+                <p>People can request correction of their personal information.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-7">
+                    We can correct records and note disputed information when needed.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-8">
+                <h2>IPP 8: Accuracy</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 8</span>
+                <p>Before using personal information, take reasonable steps to ensure it is accurate, up to date, complete, relevant, and not misleading.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-8">
+                    We refresh stale customer/staff data before important decisions.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-9">
+                <h2>IPP 9: Retention</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 9</span>
+                <p>Do not keep personal information longer than required for the purposes it may lawfully be used.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-9">
+                    We have retention periods and deletion/archive practices.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-10">
+                <h2>IPP 10: Use limits</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 10</span>
+                <p>Use personal information only for the purpose it was obtained, or related purposes / permitted exceptions.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-10">
+                    Marketing and secondary uses are covered by purpose or consent/exception.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-11">
+                <h2>IPP 11: Disclosure limits</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 11</span>
+                <p>Do not disclose personal information except for the purpose obtained or under permitted exceptions.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-11">
+                    Vendor and third-party sharing is mapped and controlled.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-12">
+                <h2>IPP 12: Disclosure outside New Zealand</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 12</span>
+                <p>Special rules apply when disclosing personal information outside NZ.</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-12">
+                    We know which tools store data offshore and have assessed them.
+                </label>
+            </article>
+            <article class="ipp-card" data-ipp-id="ipp-13">
+                <h2>IPP 13: Unique identifiers</h2>
+                <span class="ipp-ref">Privacy Act 2020 s22 IPP 13</span>
+                <p>Limits on assigning and requiring unique identifiers (e.g. IRD numbers).</p>
+                <label class="ipp-check">
+                    <input type="checkbox" data-ipp="ipp-13">
+                    We only use government identifiers where allowed and necessary.
+                </label>
+            </article>
+        </div>
+
+        <div class="policy-section" style="border-bottom:none;">
+            <div class="cta-box">
+                <h2>Turn ticks into a living register</h2>
+                <p>
+                    Modular Compliance maps obligations, tasks and evidence so you keep a record over time —
+                    with a 14-day free trial. People still do the work; the product keeps the register.
+                </p>
+                <div class="magnet-actions">
+                    <a href="https://app.modularcompliance.com/#/privacy-ipp-checklist" class="btn btn-primary btn-md" data-cf-event="cta_click" data-cf-cta="ipp_cta_open_in_app">Open in app</a>
+                    <a href="https://app.modularcompliance.com/register" class="btn btn-outline btn-md" data-cf-event="cta_click" data-cf-cta="ipp_cta_register">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <a href="/" class="nav-logo" style="text-decoration:none;">
+                    <span class="logo-icon">MC</span>
+                    <span class="logo-text">Modular Compliance</span>
+                </a>
+                <p class="footer-brand-desc">NZ-built compliance register and workflow tool that maps legislation into structured frameworks, controls and tasks.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Product</h4>
+                <a href="/#what-it-does">What it does</a>
+                <a href="/#modules">Modules</a>
+                <a href="/#boundaries">What it doesn't do</a>
+                <a href="/privacy-ipp-checklist">IPP self-check</a>
+                <a href="https://app.modularcompliance.com/register" data-cf-event="cta_click" data-cf-cta="footer_links_register">Register</a>
+                <a href="https://app.modularcompliance.com/login" data-cf-event="cta_click" data-cf-cta="footer_links_login">Log in</a>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="/about">About</a>
+                <a href="https://instilligent.com" target="_blank" rel="noopener noreferrer">Instilligent</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Use</a>
+                <a href="/security">Security</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Instilligent Limited. All rights reserved.</p>
+            <p>NZBN: 9429041896853 &middot; <a href="https://instilligent.com" target="_blank" rel="noopener noreferrer">instilligent.com</a> &middot; <a href="mailto:info@instilligent.com">info@instilligent.com</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+(function () {
+    var STORAGE_KEY = 'mc.privacy_ipp_checklist.v1';
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('input[data-ipp]'));
+    var label = document.getElementById('progressLabel');
+    var pctEl = document.getElementById('progressPct');
+    var bar = document.getElementById('progressBar');
+    var fill = document.getElementById('progressFill');
+    var printBtn = document.getElementById('printChecklist');
+
+    function emptyState() {
+        var state = {};
+        boxes.forEach(function (box) { state[box.getAttribute('data-ipp')] = false; });
+        return state;
+    }
+
+    function load() {
+        var state = emptyState();
+        try {
+            var raw = window.localStorage.getItem(STORAGE_KEY);
+            if (!raw) return state;
+            var parsed = JSON.parse(raw);
+            boxes.forEach(function (box) {
+                var id = box.getAttribute('data-ipp');
+                if (typeof parsed[id] === 'boolean') state[id] = parsed[id];
+            });
+        } catch (e) { /* keep empty */ }
+        return state;
+    }
+
+    function save(state) {
+        try { window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) { /* private mode */ }
+    }
+
+    function render(state) {
+        var checked = 0;
+        boxes.forEach(function (box) {
+            var id = box.getAttribute('data-ipp');
+            box.checked = !!state[id];
+            if (state[id]) checked += 1;
+        });
+        var total = boxes.length;
+        var pct = total === 0 ? 0 : Math.round((checked / total) * 100);
+        if (label) label.textContent = 'Progress: ' + checked + ' / ' + total;
+        if (pctEl) pctEl.textContent = pct + '%';
+        if (fill) fill.style.width = pct + '%';
+        if (bar) bar.setAttribute('aria-valuenow', String(pct));
+    }
+
+    var state = load();
+    render(state);
+
+    boxes.forEach(function (box) {
+        box.addEventListener('change', function () {
+            state[box.getAttribute('data-ipp')] = box.checked;
+            save(state);
+            render(state);
+        });
+    });
+
+    if (printBtn) {
+        printBtn.addEventListener('click', function () { window.print(); });
+    }
+})();
+</script>
+</body>
+</html>
