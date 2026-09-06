@@ -10,7 +10,7 @@ It does NOT connect to operational systems, monitor transactions, screen activit
 
 ## Status
 
-Live. Register or log in on the app at https://app.modularcompliance.com/register and https://app.modularcompliance.com/login. Public pricing: Starter NZ$199/month, Professional NZ$499/month, Enterprise by enquiry (all prices NZD, + GST). This marketing site does not take card payment. Questions: info@instilligent.com.
+Live. 14-day free trial — no credit card required. Register or Start Free Trial on the app at https://app.modularcompliance.com/register, or log in at https://app.modularcompliance.com/login. Public pricing: Starter NZ$199/month, Professional NZ$499/month, Enterprise by enquiry (all prices NZD, + GST). This marketing site does not take card payment. Questions: info@instilligent.com.
 
 ## Pricing (NZD, excluding GST)
 
@@ -18,7 +18,7 @@ Live. Register or log in on the app at https://app.modularcompliance.com/registe
 - Professional — NZ$499/month + GST: up to 25 users, up to 5 compliance frameworks, 25 GB document storage, REST API access.
 - Enterprise — contact us for pricing: unlimited users, as many compliance frameworks as you need, SSO integration (SAML 2.0 & OIDC).
 - Optional add-ons: build-your-own custom modules NZ$49/month for the first and NZ$25/month each additional; extra users NZ$25/user/month (Starter) or NZ$15/user/month (Professional); extra document storage NZ$5/GB/month.
-- Register for Starter or Professional on the app (https://app.modularcompliance.com/register). This marketing site does not take card payment. Enterprise is by enquiry — email info@instilligent.com.
+- Start a 14-day free trial (no credit card required). Register or Start Free Trial for Starter or Professional on the app (https://app.modularcompliance.com/register). This marketing site does not take card payment. Enterprise is by enquiry — email info@instilligent.com.
 
 ## Platform capabilities (code-verified 2026-04-30 audit)
 
