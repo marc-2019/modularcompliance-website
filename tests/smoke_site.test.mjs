@@ -151,6 +151,17 @@ test('IPP lead magnet uses claim-safe copy, 13 IPPs, and live CTAs', () => {
   }
   assert.match(magnet, /IPP 12/)
   assert.match(magnet, /IPP 13/)
+  assert.equal([...magnet.matchAll(/data-ipp="ipp-\d+"/g)].length, 13)
+  assert.match(magnet, /mc\.privacy_ipp_checklist\.v1/)
+  for (const selfCheck of [
+    'We have documented why we collect each category of personal information.',
+    'We know which tools store data offshore and have assessed them.',
+    'We only use government identifiers where allowed and necessary.',
+  ]) {
+    assert.match(magnet, new RegExp(selfCheck.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), selfCheck)
+  }
+  assert.match(magnet, /Special rules apply when disclosing personal information outside NZ\./)
+  assert.match(magnet, /Limits on assigning and requiring unique identifiers/)
 
   assert.match(magnet, /href="https:\/\/app\.modularcompliance\.com\/#\/privacy-ipp-checklist"/)
   assert.match(magnet, /Open in app/)

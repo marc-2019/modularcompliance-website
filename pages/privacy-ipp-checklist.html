@@ -48,6 +48,7 @@
         .policy-section a:hover { color: var(--purple-300); }
         .info-box { padding: 1rem 1.25rem; background: rgba(107,33,168,0.08); border: 1px solid rgba(107,33,168,0.25); border-radius: var(--r-lg); margin: 1rem 0; }
         .info-box p { margin-bottom: 0; color: var(--text-muted); font-size: var(--text-sm); }
+        .magnet-section { padding-top: var(--sp-xl); }
         .breadcrumb { font-size: var(--text-sm); color: var(--text-dim); margin: 5.5rem auto 0; max-width: 800px; padding: 0 var(--sp-lg); }
         .breadcrumb a { color: var(--text-dim); }
         .breadcrumb a:hover { color: var(--purple-400); }
@@ -104,7 +105,7 @@
     <a href="/">Modular Compliance</a> / IPP self-check
 </nav>
 
-<div class="section">
+<div class="section magnet-section">
     <div class="policy-body">
 
         <div class="policy-section">
@@ -122,9 +123,9 @@
                 </p>
             </div>
             <div class="magnet-actions no-print">
-                <a href="https://app.modularcompliance.com/#/privacy-ipp-checklist" class="btn btn-primary" data-cf-event="cta_click" data-cf-cta="ipp_open_in_app">Open in app</a>
-                <a href="https://app.modularcompliance.com/register" class="btn btn-outline" data-cf-event="cta_click" data-cf-cta="ipp_register">Start Free Trial</a>
-                <button type="button" class="btn btn-ghost" id="printChecklist">Print checklist</button>
+                <a href="https://app.modularcompliance.com/#/privacy-ipp-checklist" class="btn btn-primary btn-md" data-cf-event="cta_click" data-cf-cta="ipp_open_in_app">Open in app</a>
+                <a href="https://app.modularcompliance.com/register" class="btn btn-outline btn-md" data-cf-event="cta_click" data-cf-cta="ipp_register">Start Free Trial</a>
+                <button type="button" class="btn btn-ghost btn-md" id="printChecklist">Print checklist</button>
             </div>
         </div>
 
@@ -144,7 +145,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 1</span>
                 <p>Personal information should only be collected for a lawful purpose connected with your functions.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-1" aria-label="IPP 1 self-check">
+                    <input type="checkbox" data-ipp="ipp-1">
                     We have documented why we collect each category of personal information.
                 </label>
             </article>
@@ -153,7 +154,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 2</span>
                 <p>Collect personal information from the individual concerned where practicable.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-2" aria-label="IPP 2 self-check">
+                    <input type="checkbox" data-ipp="ipp-2">
                     We collect from the person themselves unless we have a clear exception reason.
                 </label>
             </article>
@@ -162,7 +163,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 3</span>
                 <p>When collecting, take reasonable steps so people know who you are, why you collect, and what happens to their information.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-3" aria-label="IPP 3 self-check">
+                    <input type="checkbox" data-ipp="ipp-3">
                     Our forms/notices explain who we are, purpose, and who we share with.
                 </label>
             </article>
@@ -171,7 +172,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 4</span>
                 <p>Collection must be lawful, fair, and not unreasonably intrusive.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-4" aria-label="IPP 4 self-check">
+                    <input type="checkbox" data-ipp="ipp-4">
                     We do not collect by deceptive or overly intrusive means.
                 </label>
             </article>
@@ -180,7 +181,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 5</span>
                 <p>Take reasonable steps to protect personal information against loss, access, use, modification or disclosure.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-5" aria-label="IPP 5 self-check">
+                    <input type="checkbox" data-ipp="ipp-5">
                     We have access controls, backups, and a plan for incidents.
                 </label>
             </article>
@@ -189,7 +190,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 6</span>
                 <p>People can request access to their personal information you hold.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-6" aria-label="IPP 6 self-check">
+                    <input type="checkbox" data-ipp="ipp-6">
                     We know how to receive and respond to access requests.
                 </label>
             </article>
@@ -198,7 +199,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 7</span>
                 <p>People can request correction of their personal information.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-7" aria-label="IPP 7 self-check">
+                    <input type="checkbox" data-ipp="ipp-7">
                     We can correct records and note disputed information when needed.
                 </label>
             </article>
@@ -207,7 +208,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 8</span>
                 <p>Before using personal information, take reasonable steps to ensure it is accurate, up to date, complete, relevant, and not misleading.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-8" aria-label="IPP 8 self-check">
+                    <input type="checkbox" data-ipp="ipp-8">
                     We refresh stale customer/staff data before important decisions.
                 </label>
             </article>
@@ -216,7 +217,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 9</span>
                 <p>Do not keep personal information longer than required for the purposes it may lawfully be used.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-9" aria-label="IPP 9 self-check">
+                    <input type="checkbox" data-ipp="ipp-9">
                     We have retention periods and deletion/archive practices.
                 </label>
             </article>
@@ -225,7 +226,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 10</span>
                 <p>Use personal information only for the purpose it was obtained, or related purposes / permitted exceptions.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-10" aria-label="IPP 10 self-check">
+                    <input type="checkbox" data-ipp="ipp-10">
                     Marketing and secondary uses are covered by purpose or consent/exception.
                 </label>
             </article>
@@ -234,7 +235,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 11</span>
                 <p>Do not disclose personal information except for the purpose obtained or under permitted exceptions.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-11" aria-label="IPP 11 self-check">
+                    <input type="checkbox" data-ipp="ipp-11">
                     Vendor and third-party sharing is mapped and controlled.
                 </label>
             </article>
@@ -243,7 +244,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 12</span>
                 <p>Special rules apply when disclosing personal information outside NZ.</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-12" aria-label="IPP 12 self-check">
+                    <input type="checkbox" data-ipp="ipp-12">
                     We know which tools store data offshore and have assessed them.
                 </label>
             </article>
@@ -252,7 +253,7 @@
                 <span class="ipp-ref">Privacy Act 2020 s22 IPP 13</span>
                 <p>Limits on assigning and requiring unique identifiers (e.g. IRD numbers).</p>
                 <label class="ipp-check">
-                    <input type="checkbox" data-ipp="ipp-13" aria-label="IPP 13 self-check">
+                    <input type="checkbox" data-ipp="ipp-13">
                     We only use government identifiers where allowed and necessary.
                 </label>
             </article>
@@ -266,8 +267,8 @@
                     with a 14-day free trial. People still do the work; the product keeps the register.
                 </p>
                 <div class="magnet-actions">
-                    <a href="https://app.modularcompliance.com/#/privacy-ipp-checklist" class="btn btn-primary" data-cf-event="cta_click" data-cf-cta="ipp_cta_open_in_app">Open in app</a>
-                    <a href="https://app.modularcompliance.com/register" class="btn btn-outline" data-cf-event="cta_click" data-cf-cta="ipp_cta_register">Start Free Trial</a>
+                    <a href="https://app.modularcompliance.com/#/privacy-ipp-checklist" class="btn btn-primary btn-md" data-cf-event="cta_click" data-cf-cta="ipp_cta_open_in_app">Open in app</a>
+                    <a href="https://app.modularcompliance.com/register" class="btn btn-outline btn-md" data-cf-event="cta_click" data-cf-cta="ipp_cta_register">Start Free Trial</a>
                 </div>
             </div>
         </div>
