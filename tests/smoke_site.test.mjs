@@ -100,3 +100,79 @@ test('sitemap includes all Phase A URLs', () => {
     assert.match(s, new RegExp(`<loc>https://modularcompliance\\.com${path.replace('/', '\\/')}</loc>`))
   }
 })
+
+test('IPP lead magnet is a real page, not a homepage duplicate', () => {
+  const file = 'pages/privacy-ipp-checklist.html'
+  assert.equal(existsSync(join(root, file)), true, file)
+  const magnet = read(file)
+  const home = read('index.html')
+  const redirects = read('_redirects')
+
+  assert.notEqual(magnet, home)
+  assert.match(redirects, /^\/privacy-ipp-checklist\s+\/pages\/privacy-ipp-checklist\.html\s+200/m)
+  assert.match(redirects, /^\/privacy-ipp-checklist\.html\s+\/pages\/privacy-ipp-checklist\.html\s+200/m)
+
+  assert.match(magnet, /<title>NZ Privacy Act 2020 — IPP self-check \(educational\)/)
+  assert.match(magnet, /<link rel="canonical" href="https:\/\/modularcompliance\.com\/privacy-ipp-checklist">/)
+  assert.match(magnet, /<meta property="og:url" content="https:\/\/modularcompliance\.com\/privacy-ipp-checklist">/)
+  assert.match(magnet, /<meta property="og:title" content="NZ Privacy Act 2020 — IPP self-check \(educational\)/)
+  assert.doesNotMatch(magnet, /<link rel="canonical" href="https:\/\/modularcompliance\.com\/">/)
+  assert.doesNotMatch(home, /<title>NZ Privacy Act 2020 — IPP self-check \(educational\)/)
+  assert.match(magnet, /<h1[^>]*>NZ Privacy Act 2020 — IPP self-check \(educational\)<\/h1>/)
+  assert.doesNotMatch(home, /<h1[^>]*>NZ Privacy Act 2020 — IPP self-check \(educational\)<\/h1>/)
+})
+
+test('IPP lead magnet uses claim-safe copy, 13 IPPs, and live CTAs', () => {
+  const magnet = read('pages/privacy-ipp-checklist.html')
+  assert.match(magnet, /Walk through the 13 Information Privacy Principles/)
+  assert.match(magnet, /Progress is saved in this browser only/)
+  assert.match(magnet, /not legal advice/)
+  assert.match(magnet, /not a certification/)
+  assert.match(magnet, /does not mean you are .Privacy Act compliant/)
+  assert.match(magnet, /People do the compliance work/)
+  assert.match(magnet, /9429041896853/)
+
+  for (const title of [
+    'Purpose of collection',
+    'Source of personal information',
+    'What to tell people when collecting',
+    'Manner of collection',
+    'Storage and security',
+    'Access',
+    'Correction',
+    'Accuracy',
+    'Retention',
+    'Use limits',
+    'Disclosure limits',
+    'Disclosure outside New Zealand',
+    'Unique identifiers',
+  ]) {
+    assert.match(magnet, new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), title)
+  }
+  assert.match(magnet, /IPP 12/)
+  assert.match(magnet, /IPP 13/)
+
+  assert.match(magnet, /href="https:\/\/app\.modularcompliance\.com\/#\/privacy-ipp-checklist"/)
+  assert.match(magnet, /Open in app/)
+  assert.match(magnet, /href="https:\/\/app\.modularcompliance\.com\/register"/)
+  assert.match(magnet, /Start [Ff]ree [Tt]rial/)
+
+  assert.doesNotMatch(magnet, /\$999/)
+  assert.doesNotMatch(magnet, /NZ\$999/)
+  assert.doesNotMatch(magnet, /Privacy Commissioner approved/i)
+  assert.doesNotMatch(magnet, /WorkSafe/)
+  assert.doesNotMatch(magnet, /guaranteed audit/i)
+  assert.doesNotMatch(magnet, /compliant with/i)
+})
+
+test('homepage links to the IPP magnet and still forbids invented Enterprise $999', () => {
+  const home = read('index.html')
+  assert.match(home, /href="\/privacy-ipp-checklist"/)
+  assert.doesNotMatch(home, /\$999/)
+  assert.doesNotMatch(home, /NZ\$999/)
+})
+
+test('sitemap includes the IPP magnet URL', () => {
+  const s = read('sitemap.xml')
+  assert.match(s, /<loc>https:\/\/modularcompliance\.com\/privacy-ipp-checklist<\/loc>/)
+})
