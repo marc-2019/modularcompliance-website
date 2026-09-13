@@ -37,7 +37,7 @@
       "id": "privacy_gdpr",
       "name": "Privacy & GDPR",
       "kind": "framework_templates",
-      "legislation": [],
+      "legislation": ["Regulation (EU) 2016/679 (GDPR)"],
       "status": "active",
       "description": "Data protection framework templates covering consent, breach response and data subject request obligations."
     },
@@ -53,7 +53,7 @@
       "id": "food_safety",
       "name": "Food Safety",
       "kind": "framework_templates",
-      "legislation": [],
+      "legislation": ["Food Act 2014 (NZ)"],
       "status": "active",
       "description": "HACCP-based food safety checklist and documentation templates."
     },
@@ -61,7 +61,7 @@
       "id": "body_corporate",
       "name": "Body Corporate",
       "kind": "framework_templates",
-      "legislation": [],
+      "legislation": ["Unit Titles Act 2010 (NZ)"],
       "status": "active",
       "description": "Task and documentation templates for body corporate governance obligations."
     },
@@ -69,7 +69,7 @@
       "id": "maritime_moss",
       "name": "Maritime",
       "kind": "framework_templates",
-      "legislation": [],
+      "legislation": ["Maritime Transport Act 1994 (NZ)"],
       "status": "active",
       "description": "Maritime safety documentation and checklist templates."
     },
@@ -77,7 +77,7 @@
       "id": "environmental",
       "name": "Environmental",
       "kind": "framework_templates",
-      "legislation": [],
+      "legislation": ["Resource Management Act 1991 (NZ)"],
       "status": "active",
       "description": "Environmental compliance documentation templates."
     }
