@@ -47,7 +47,7 @@
       "kind": "framework_templates",
       "legislation": [],
       "status": "active",
-      "description": "ISO 9001 quality management framework templates."
+      "description": "Quality management templates: policy, processes, document control, internal audits, non-conformance, corrective action, management review, and customer feedback. A starting point your team reviews and adapts."
     },
     {
       "id": "food_safety",
@@ -77,9 +77,9 @@
       "id": "environmental",
       "name": "Environmental",
       "kind": "framework_templates",
-      "legislation": ["Resource Management Act 1991 (NZ)"],
+      "legislation": [],
       "status": "active",
-      "description": "Environmental compliance documentation templates."
+      "description": "Environmental management templates: policy, aspects and impacts, waste, emissions, resources, and spill response. A starting point your team reviews and adapts."
     }
   ],
   "removed": [
