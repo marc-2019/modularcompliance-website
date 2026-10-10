@@ -1,0 +1,80 @@
+// Cloudflare Pages middleware: stop repo-only files leaking from the publish root.
+//
+// This site deploys the repository root as its static asset directory, so
+// dotfiles, docs/, marketing-audits/ and tests/ were publicly downloadable
+// (verified by read-only GET on modularcompliance.com, 2026-10-10).
+// Pages `_redirects` cannot 404-rewrite ("Rewrites (other status codes)" are
+// unsupported), so a real 404 needs a Function.
+//
+// `_routes.json` includes "/*" (only known-public static assets are excluded),
+// so percent-encoded variants such as /%2egitignore always reach this code.
+// The path is decoded repeatedly until it stops changing, lower-cased and
+// dot-segment-normalised BEFORE matching, then a hit returns 404.
+//
+// Asserted by tests/leak_block.test.mjs (imports normalizePath / isBlocked).
+
+/** Top-level directories that must never be served. */
+const BLOCKED_DIRS: string[] = ["docs", "marketing-audits", "tests", "scripts", "tools", "functions", "e2e", "dist", "node_modules"];
+
+/** Exact files (lower-case, normalised) that must never be served. */
+const BLOCKED_FILES: string[] = ["/_routes.json", "/_redirects", "/_headers", "/package.json", "/package-lock.json", "/wrangler.toml", "/readme", "/readme.md", "/deployment.md"];
+
+export function normalizePath(pathname: string): string {
+  let p = pathname;
+  for (let i = 0; i < 10; i++) {
+    let d: string;
+    try {
+      d = decodeURIComponent(p);
+    } catch {
+      break;
+    }
+    if (d === p) break;
+    p = d;
+  }
+  p = p.replace(/\\/g, "/").toLowerCase();
+  const out: string[] = [];
+  for (const seg of p.split("/")) {
+    if (seg === "" || seg === ".") continue;
+    if (seg === "..") {
+      out.pop();
+      continue;
+    }
+    out.push(seg);
+  }
+  return "/" + out.join("/");
+}
+
+export function isBlocked(pathname: string): boolean {
+  const n = normalizePath(pathname);
+  const segs = n.split("/").filter(Boolean);
+  // Any dot-segment (dotfile or dot-directory) except /.well-known/.
+  if (segs.some((s) => s.startsWith(".") && s !== ".well-known")) return true;
+  if (segs.length > 0 && BLOCKED_DIRS.includes(segs[0])) return true;
+  if (BLOCKED_FILES.includes(n)) return true;
+  // Markdown is never a public page on this site.
+  if (n.endsWith(".md")) return true;
+  return false;
+}
+
+interface Env {
+  ASSETS: { fetch: (input: Request | string) => Promise<Response> };
+}
+
+export const onRequest = async (ctx: {
+  request: Request;
+  next: () => Promise<Response>;
+  env: Env;
+}): Promise<Response> => {
+  const { request, next } = ctx;
+  if (!isBlocked(new URL(request.url).pathname)) {
+    return next();
+  }
+  return new Response("Not Found", {
+    status: 404,
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "X-Robots-Tag": "noindex",
+      "Cache-Control": "no-store",
+    },
+  });
+};
