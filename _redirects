@@ -7,3 +7,28 @@
 /contact    /pages/contact.html    200
 /privacy-ipp-checklist    /pages/privacy-ipp-checklist.html    200
 /privacy-ipp-checklist.html    /pages/privacy-ipp-checklist.html    200
+
+# Not part of the public site. Cloudflare Pages documents non-3xx rewrites as unsupported;
+# the publish directory (dist/) is what keeps these paths out of the upload.
+/docs / 404
+/docs/* / 404
+/marketing-audits / 404
+/marketing-audits/* / 404
+/tests / 404
+/tests/* / 404
+/scripts / 404
+/scripts/* / 404
+/tools / 404
+/tools/* / 404
+/e2e / 404
+/e2e/* / 404
+/.github / 404
+/.github/* / 404
+/.gitignore / 404
+/.nojekyll / 404
+/README / 404
+/README.md / 404
+/DEPLOYMENT.md / 404
+/wrangler.toml / 404
+/package.json / 404
+/package-lock.json / 404

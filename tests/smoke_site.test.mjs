@@ -4,12 +4,26 @@
  */
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { readFileSync, existsSync } from 'node:fs'
-import { join, dirname } from 'node:path'
+import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs'
+import { join, dirname, relative, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { stagePublish, publishDir } from '../scripts/stage-publish.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const read = (f) => readFileSync(join(root, f), 'utf8')
+
+stagePublish()
+
+function walk(dir, acc = []) {
+  for (const name of readdirSync(dir)) {
+    const p = join(dir, name)
+    if (statSync(p).isDirectory()) walk(p, acc)
+    else acc.push(p)
+  }
+  return acc
+}
+
+const TEXT_EXT = new Set(['.html', '.txt', '.json', '.xml', '.css', '.js', '.svg', '.mjs'])
 
 test('index.html exists and names Modular Compliance', () => {
   const html = read('index.html')
@@ -90,9 +104,11 @@ test('new pages carry the correct NZBN and no fabricated certifications', () => 
   }
 })
 
-test('security page explicitly disclaims certifications it does not hold', () => {
+test('security page does not name ISO 27001 or SOC 2', () => {
   const t = read('pages/security.html')
-  assert.match(t, /does not hold ISO.{0,20}27001, SOC.{0,10}2/i)
+  assert.doesNotMatch(t, /ISO[\s\u00a0]*27001/i)
+  assert.doesNotMatch(t, /SOC[\s\u00a0]*2/i)
+  assert.doesNotMatch(t, /Certifications/)
 })
 
 test('sitemap includes all Phase A URLs', () => {
@@ -123,11 +139,22 @@ test('IPP lead magnet is a real page, not a homepage duplicate', () => {
   assert.doesNotMatch(home, /<h1[^>]*>NZ Privacy Act 2020 — IPP self-check \(educational\)<\/h1>/)
 })
 
-test('IPP lead magnet uses claim-safe copy, IPPs 1–13 plus IPP 3A note, and live CTAs', () => {
+test('IPP lead magnet walks 14 principles with IPP 3A as an item, and live CTAs', () => {
   const magnet = read('pages/privacy-ipp-checklist.html')
-  assert.match(magnet, /Walk through Information Privacy Principles 1–13/)
-  assert.match(magnet, /IPP 3A/)
+  const policy = read('pages/privacy.html')
+  assert.match(magnet, /Walk through the Information Privacy Principles, including IPP 3A/)
+  assert.match(magnet, /indirect collection: tell the individual/)
+  assert.match(magnet, /in force since 1 May 2026/)
+  assert.match(magnet, /privacy\.org\.nz\/privacy-principles\/3a/)
+  assert.match(magnet, /data-ipp="ipp-3a"/)
+  assert.match(magnet, /Progress: 0 \/ 14/)
+  assert.doesNotMatch(magnet, /Principles 1[–-]13/)
   assert.doesNotMatch(magnet, /the 13 Information Privacy Principles/)
+  assert.doesNotMatch(magnet, /13 IPPs/)
+  assert.match(policy, /IPP 3A – Indirect collection/)
+  assert.match(policy, /Tell the individual/)
+  assert.doesNotMatch(policy, /IPP 1[–-]13/)
+  assert.doesNotMatch(policy, /Principles 1[–-]13/)
   assert.match(magnet, /Progress is saved in this browser only/)
   assert.match(magnet, /not legal advice/)
   assert.match(magnet, /not a certification/)
@@ -154,7 +181,7 @@ test('IPP lead magnet uses claim-safe copy, IPPs 1–13 plus IPP 3A note, and li
   }
   assert.match(magnet, /IPP 12/)
   assert.match(magnet, /IPP 13/)
-  assert.equal([...magnet.matchAll(/data-ipp="ipp-\d+"/g)].length, 13)
+  assert.equal([...magnet.matchAll(/data-ipp="[^"]+"/g)].length, 14)
   assert.match(magnet, /mc\.privacy_ipp_checklist\.v1/)
   for (const selfCheck of [
     'We have documented why we collect each category of personal information.',
@@ -190,4 +217,122 @@ test('homepage links to the IPP magnet and still forbids invented Enterprise $99
 test('sitemap includes the IPP magnet URL', () => {
   const s = read('sitemap.xml')
   assert.match(s, /<loc>https:\/\/modularcompliance\.com\/privacy-ipp-checklist<\/loc>/)
+})
+
+test('homepage and llms.txt lead with the product and one responsibility line', () => {
+  const home = read('index.html')
+  const llms = read('llms.txt')
+  const line = 'Compliance work is done by people; Modular Compliance keeps the record.'
+  assert.match(home, /A compliance register and/)
+  assert.match(home, /https:\/\/app\.modularcompliance\.com\/register/)
+  assert.match(home, new RegExp(line.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
+  assert.doesNotMatch(home, /Your responsibility/)
+  assert.doesNotMatch(home, /id="boundaries"/)
+  assert.doesNotMatch(home, /AI-generated/)
+  assert.match(llms, new RegExp(line.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
+  assert.doesNotMatch(llms, /AI-generated/)
+  assert.match(home, /Quality management/)
+  assert.doesNotMatch(home, /Quality ISO/)
+})
+
+test('modules.json names Quality management and does not mention AML', () => {
+  const raw = read('modules.json')
+  const data = JSON.parse(raw)
+  assert.equal(data.modules.find((m) => m.id === 'quality_iso').name, 'Quality management')
+  assert.equal(data.removed, undefined)
+  assert.doesNotMatch(raw, /\bAML\b/)
+})
+
+test('privacy policy does not claim audit logs record all access to personal data', () => {
+  const t = read('pages/privacy.html')
+  assert.doesNotMatch(t, /all access to personal data/)
+  assert.match(t, /Audit logs record task completions and policy or framework terms acceptances/)
+})
+
+test('terms keeps template liability wording and drops the absence catalogue', () => {
+  const t = read('pages/terms.html')
+  assert.doesNotMatch(t, /does not connect to your operational systems/)
+  assert.doesNotMatch(t, /AI-generated/)
+  assert.match(t, /You are responsible for reviewing any framework or module template/)
+  assert.match(t, /does not take\s+liability for template accuracy/)
+  assert.match(t, /NZ\$199/)
+  assert.match(t, /NZ\$499/)
+})
+
+const BANNED = [
+  [/ISO[\s\u00a0]*27001/i, 'ISO 27001'],
+  [/SOC[\s\u00a0]*2/i, 'SOC 2'],
+  [/\bAML\b/, 'AML'],
+  [/\bcertified\b/i, 'certified'],
+  [/\bguaranteed\b/i, 'guaranteed'],
+  [/ensures compliance/i, 'ensures compliance'],
+  [/automated compliance/i, 'automated compliance'],
+  [/AI-powered/i, 'AI-powered'],
+  [/SLA guarantee/i, 'SLA guarantee'],
+  [/72[\s-]*hours?/i, '72 hours'],
+  [/13 IPPs/i, '13 IPPs'],
+  [/13 Information Privacy Principles/i, '13 Information Privacy Principles'],
+  [/14-day free trial/i, '14-day free trial'],
+  [/no card/i, 'no card'],
+]
+
+test('published files do not contain banned claim phrases', () => {
+  const files = walk(publishDir).filter((p) => TEXT_EXT.has(p.slice(p.lastIndexOf('.'))))
+  assert.ok(files.length > 5)
+  for (const file of files) {
+    const text = readFileSync(file, 'utf8')
+    for (const [re, label] of BANNED) {
+      assert.equal(re.test(text), false, `${relative(publishDir, file)} contains ${label}`)
+    }
+  }
+})
+
+test('publish dir is the public site only', () => {
+  const blocked = [
+    'docs',
+    'marketing-audits',
+    'tests',
+    'scripts',
+    'tools',
+    'e2e',
+    '.github',
+    '.gitignore',
+    '.nojekyll',
+    'README.md',
+    'README',
+    'DEPLOYMENT.md',
+    'wrangler.toml',
+    'package.json',
+  ]
+  for (const name of blocked) {
+    assert.equal(existsSync(join(publishDir, name)), false, name)
+  }
+  assert.equal(existsSync(join(root, 'docs', 'AI-DISCOVERABILITY-AUDIT.md')), true)
+  assert.equal(existsSync(join(root, 'marketing-audits', 'mcp-connector-stocktake-2026-08-26.md')), true)
+
+  for (const file of walk(publishDir)) {
+    const rel = relative(publishDir, file)
+    for (const seg of rel.split(sep)) {
+      assert.equal(seg.startsWith('.'), false, rel)
+    }
+  }
+
+  const redirects = readFileSync(join(publishDir, '_redirects'), 'utf8')
+  for (const rule of [
+    '/docs/* / 404',
+    '/marketing-audits/* / 404',
+    '/tests/* / 404',
+    '/scripts/* / 404',
+    '/tools/* / 404',
+    '/e2e/* / 404',
+    '/.github/* / 404',
+    '/.gitignore / 404',
+    '/.nojekyll / 404',
+    '/README.md / 404',
+    '/DEPLOYMENT.md / 404',
+  ]) {
+    assert.match(redirects, new RegExp(rule.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), rule)
+  }
+  assert.equal(existsSync(join(publishDir, 'index.html')), true)
+  assert.equal(existsSync(join(publishDir, 'pages', 'security.html')), true)
 })

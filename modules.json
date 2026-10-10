@@ -4,7 +4,7 @@
   "operator": "Instilligent Limited",
   "operator_nzbn": "9429041896853",
   "product_url": "https://modularcompliance.com",
-  "last_updated": "2026-06-11",
+  "last_updated": "2026-10-10",
   "status": "live",
   "note": "Inventory derived from the product's module registry (compliance.compliance_modules). Each module is a seeded template library of obligations, controls and tasks that customers review and adapt. People do the compliance work; the tool keeps the record.",
   "total_active": 9,
@@ -43,7 +43,7 @@
     },
     {
       "id": "quality_iso",
-      "name": "Quality ISO",
+      "name": "Quality management",
       "kind": "framework_templates",
       "legislation": [],
       "status": "active",
@@ -80,15 +80,6 @@
       "legislation": [],
       "status": "active",
       "description": "Environmental management templates: policy, aspects and impacts, waste, emissions, resources, and spill response. A starting point your team reviews and adapts."
-    }
-  ],
-  "removed": [
-    {
-      "id": "financial_aml",
-      "name": "Financial AML",
-      "status": "withdrawn",
-      "removed": "2026-04-30",
-      "reason": "Withdrawn. AML/CFT capability (transaction monitoring, sanctions/PEP screening, SAR/STR filing) is not offered by Modular Compliance."
     }
   ]
 }

@@ -1,12 +1,10 @@
 # Modular Compliance
 
-> Modular Compliance, by Instilligent Limited (NZ). NZ-built compliance register and workflow tool that maps legislation into structured frameworks, controls and tasks. Day-to-day compliance work is done by people; the tool keeps the record.
+> Modular Compliance, by Instilligent Limited (NZ). NZ-built compliance register and workflow tool that maps legislation into structured frameworks, controls and tasks. Compliance work is done by people; Modular Compliance keeps the record.
 
 ## About
 
-Modular Compliance is a NZ-built register and workflow tool. It maps legislation into structured frameworks, controls and tasks — populated from AI-generated and partner-supplied templates that customers review and adapt as their starting point. Customers remain responsible for template content accuracy and applicability. The system records who completed what and when, captures policy and framework terms acceptance with an audit trail, surfaces overdue tasks on a dashboard, and stores supporting evidence and documents.
-
-Compliance work is done by people; Modular Compliance keeps the record.
+Modular Compliance is a NZ-built register and workflow tool. It maps legislation into structured frameworks, controls and tasks, records who completed what and when, captures policy and framework terms acceptance with an audit trail, surfaces overdue tasks on a dashboard, and stores supporting evidence and documents. Compliance work is done by people; Modular Compliance keeps the record.
 
 ## Status
 
@@ -42,7 +40,7 @@ Each module is a seeded template library of obligations, controls and tasks — 
 2. Employment & HR — templates covering employment agreements, leave, termination procedures, record-keeping and good faith obligations (NZ Employment Relations Act 2000)
 3. Privacy & Cybersecurity — NZ Privacy Act 2020 obligations register: IPP self-assessment (Information Privacy Principles), breach-response checklist, security controls register, policy library
 4. Privacy & GDPR — data protection framework templates covering consent, breach response and data subject request obligations
-5. Quality — quality management templates: policy, processes, audits and corrective action
+5. Quality management — quality management templates: policy, processes, audits and corrective action
 6. Food Safety — HACCP-based food safety checklist and documentation templates
 7. Body Corporate — task and documentation templates for body corporate governance obligations
 8. Maritime — maritime safety documentation and checklist templates

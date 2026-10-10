@@ -13,6 +13,9 @@ desktop.ini
 node_modules/
 npm-debug.log*
 
+# Cloudflare Pages build output (scripts/stage-publish.mjs). Not a source tree.
+dist/
+
 # Env
 .env
 .env.local
