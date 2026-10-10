@@ -44,12 +44,13 @@ test('llms.txt uses the Instilligent Limited NZBN', () => {
   assert.doesNotMatch(t, /9429051796284/)
 })
 
-test('homepage and llms.txt match live self-serve trial (no invented Enterprise price)', () => {
+test('homepage and llms.txt use Register CTAs, no trial promise, no invented Enterprise price', () => {
   for (const f of ['index.html', 'llms.txt']) {
     const t = read(f)
-    assert.match(t, /14-day free trial/i, f)
-    assert.match(t, /no credit card required/i, f)
-    assert.match(t, /Start Free Trial/)
+    // Free-trial wording dropped on purpose 2026-08-21 (Fair Trading risk); Register is the CTA.
+    assert.doesNotMatch(t, /free trial/i, f)
+    assert.doesNotMatch(t, /no credit card/i, f)
+    assert.match(t, /Register/, f)
     assert.match(t, /https:\/\/app\.modularcompliance\.com\/register/)
     assert.match(t, /NZ\$199/)
     assert.match(t, /NZ\$499/)
@@ -122,9 +123,11 @@ test('IPP lead magnet is a real page, not a homepage duplicate', () => {
   assert.doesNotMatch(home, /<h1[^>]*>NZ Privacy Act 2020 — IPP self-check \(educational\)<\/h1>/)
 })
 
-test('IPP lead magnet uses claim-safe copy, 13 IPPs, and live CTAs', () => {
+test('IPP lead magnet uses claim-safe copy, IPPs 1–13 plus IPP 3A note, and live CTAs', () => {
   const magnet = read('pages/privacy-ipp-checklist.html')
-  assert.match(magnet, /Walk through the 13 Information Privacy Principles/)
+  assert.match(magnet, /Walk through Information Privacy Principles 1–13/)
+  assert.match(magnet, /IPP 3A/)
+  assert.doesNotMatch(magnet, /the 13 Information Privacy Principles/)
   assert.match(magnet, /Progress is saved in this browser only/)
   assert.match(magnet, /not legal advice/)
   assert.match(magnet, /not a certification/)
@@ -166,7 +169,8 @@ test('IPP lead magnet uses claim-safe copy, 13 IPPs, and live CTAs', () => {
   assert.match(magnet, /href="https:\/\/app\.modularcompliance\.com\/#\/privacy-ipp-checklist"/)
   assert.match(magnet, /Open in app/)
   assert.match(magnet, /href="https:\/\/app\.modularcompliance\.com\/register"/)
-  assert.match(magnet, /Start [Ff]ree [Tt]rial/)
+  assert.doesNotMatch(magnet, /free trial/i)
+  assert.match(magnet, /Register/)
 
   assert.doesNotMatch(magnet, /\$999/)
   assert.doesNotMatch(magnet, /NZ\$999/)

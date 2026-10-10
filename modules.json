@@ -6,7 +6,7 @@
   "product_url": "https://modularcompliance.com",
   "last_updated": "2026-06-11",
   "status": "live",
-  "note": "Inventory derived from the product's module registry (compliance.compliance_modules). Each module is a seeded template library of obligations, controls and tasks that customers review and adapt — not automated monitoring, data-logging or screening. People do the compliance work; the tool keeps the record.",
+  "note": "Inventory derived from the product's module registry (compliance.compliance_modules). Each module is a seeded template library of obligations, controls and tasks that customers review and adapt. People do the compliance work; the tool keeps the record.",
   "total_active": 9,
   "modules": [
     {
@@ -29,7 +29,7 @@
       "id": "privacy_cybersecurity",
       "name": "Privacy & Cybersecurity",
       "kind": "framework_templates",
-      "legislation": ["Privacy Act 2020 (NZ) — 13 Information Privacy Principles"],
+      "legislation": ["Privacy Act 2020 (NZ) — Information Privacy Principles"],
       "status": "active",
       "description": "NZ Privacy Act 2020 obligations register: IPP self-assessment templates, breach-response checklist, security controls register, policy library."
     },
