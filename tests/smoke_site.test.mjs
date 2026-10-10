@@ -319,17 +319,17 @@ test('publish dir is the public site only', () => {
 
   const redirects = readFileSync(join(publishDir, '_redirects'), 'utf8')
   for (const rule of [
-    '/docs/* / 404',
-    '/marketing-audits/* / 404',
-    '/tests/* / 404',
-    '/scripts/* / 404',
-    '/tools/* / 404',
-    '/e2e/* / 404',
-    '/.github/* / 404',
-    '/.gitignore / 404',
-    '/.nojekyll / 404',
-    '/README.md / 404',
-    '/DEPLOYMENT.md / 404',
+    '/docs/* / 302',
+    '/marketing-audits/* / 302',
+    '/tests/* / 302',
+    '/scripts/* / 302',
+    '/tools/* / 302',
+    '/e2e/* / 302',
+    '/.github/* / 302',
+    '/.gitignore / 302',
+    '/.nojekyll / 302',
+    '/README.md / 302',
+    '/DEPLOYMENT.md / 302',
   ]) {
     assert.match(redirects, new RegExp(rule.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), rule)
   }
