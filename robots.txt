@@ -10,7 +10,6 @@
 # prepend. Marc EXTERNAL: dashboard → AI Crawl Control on this zone — allow
 # search/citation crawlers (OAI-SearchBot, Claude-SearchBot, Claude-User,
 # PerplexityBot); keep training blocked (ClaudeBot, GPTBot, Google-Extended).
-# See marketing-audits/modular-compliance-2026-08-26-geo-crawlers.md
 
 User-agent: *
 Allow: /
